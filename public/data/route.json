@@ -88,36 +88,51 @@
    "id": "ch01",
    "title": "1 · The Dream Start",
    "era": "Destiny Islands",
-   "blurb": "Tutorial island. Weapon/level choices, Kairi's item fetch quests, first Keyblade.",
+   "blurb": "Tutorial island. The two PERMANENT character-build choices live here (weapon + growth speed), plus Kairi's fetch quests, Riku's race, free EXP, and the first Keyblade.",
    "steps": [
     {
      "id": "s1-weapon",
-     "title": "1.1 Weapon & growth choices",
-     "loc": "Dive to the Heart / Beach",
-     "do": "Pick Staff (1st) + Sword (discard) for max 10 MP. Answer Selphie/Wakka/Tidus mostly Option 3 for a faster 41–99 curve.",
+     "title": "1.1 Weapon choice — PERMANENT, pick Staff + drop Sword",
+     "loc": "Dive to the Heart",
+     "do": "You're shown three weapons — Sword (power), Staff (magic), Shield (defense) — and asked which to TAKE (1st choice) and which to GIVE UP. This is locked for the whole game. The weapon you TAKE sets your endgame MP; the one you GIVE UP shifts when Sora learns abilities.",
      "items": [
       {
-       "id": "s1-weapon-done",
+       "id": "s1-weapon-staff",
        "cat": "story",
-       "label": "Made weapon + growth-question choices"
+       "label": "TOOK the Staff (1st choice) — locks in 10 MP at endgame"
+      },
+      {
+       "id": "s1-weapon-drop-sword",
+       "cat": "story",
+       "label": "GAVE UP the Sword"
       }
-     ]
+     ],
+     "tip": "Take the STAFF, give up the SWORD. Why it matters: taking the Staff is the ONLY way to reach 10 MP at level 100 — taking Sword or Shield caps you at 8 MP forever, and MP can't be raised any other way. KH1's hardest fights (the superbosses, the Hades Cup) lean hard on magic, so those 2 extra permanent MP are a big deal. Staff(take)/Sword(drop) gives a balanced Lv100 spread (HP 84 · MP 10 · AP 51 · Atk 46 · Def 48 · 6 item / 3 accessory slots) and a good ability-learning order. Don't overthink it — this is the single most important menu in the game."
+    },
+    {
+     "id": "s1-growth",
+     "title": "1.1 Growth choice — answer mostly OPTION 3",
+     "loc": "Destiny Islands — seashore",
+     "do": "Talk to Wakka, Selphie and Tidus; each asks a question. Your answers set your leveling CURVE for the whole game (also permanent).",
+     "items": [
+      {
+       "id": "s1-growth-opt3",
+       "cat": "story",
+       "label": "Answered the 3 questions mostly Option 3 (fast 41–99)"
+      }
+     ],
+     "tip": "Pick mostly OPTION 3. The pattern: mostly Option 1 = level fast from 1–40 but slow 41–99; Option 2 = even but medium-high requirements the whole way (the worst overall); Option 3 = slower 1–40 but faster 41–99. Because there are far MORE levels between 41 and 99 than 1–40, Option 3 gets you to high levels fastest over a full 100% run. (cR0Ck uses Option 3.)"
     },
     {
      "id": "s1-items",
      "title": "1.2–1.5 Kairi's item quests",
      "loc": "Destiny Islands",
-     "do": "Gather logs, cloth, rope, mushrooms, coconuts, fish, water, seagull egg.",
+     "do": "Gather logs, cloth, rope, mushrooms, coconuts, fish, water, seagull egg for Kairi.",
      "items": [
       {
        "id": "s1-protect-chain",
        "cat": "treasure",
        "label": "Protect Chain accessory (run-area cave)"
-      },
-      {
-       "id": "s1-pretty-stone",
-       "cat": "treasure",
-       "label": "Pretty Stone (win Riku's race)"
       },
       {
        "id": "s1-items-done",
@@ -127,10 +142,24 @@
      ]
     },
     {
+     "id": "s1-race",
+     "title": "1.3 Riku's race (optional — reward: Pretty Stone)",
+     "loc": "Destiny Islands — beach",
+     "do": "Riku challenges you to a race: touch the yellow star at the far end, then run all the way back to the start. Win to get the Pretty Stone.",
+     "items": [
+      {
+       "id": "s1-pretty-stone",
+       "cat": "treasure",
+       "label": "Pretty Stone (win Riku's race)"
+      }
+     ],
+     "tip": "Don't chase Riku — take the shortcut. The moment it starts, drop straight off the ledge and hug the RIGHT side of the beach all the way to the end. Go slightly upstairs, then jump LEFT four times to reach the yellow star. Touch it and run back along the exact same path in reverse. Beating him this way is far easier than racing head-on."
+    },
+    {
      "id": "s1-spar",
-     "title": "1.2 Optional: free EXP sparring",
+     "title": "1.2 Optional: free EXP sparring (Ch.1 ONLY)",
      "loc": "Destiny Islands — seashore",
-     "do": "Before leaving the island, fight the gang for REAL EXP (it sticks): Wakka/Selphie (1 EXP), Tidus (2), then all three together (Potion), and Riku (5 EXP + Potion per win). Grind to ~Lv6 (learn Stun Impact at 6) to make Traverse Town/Wonderland much easier — you can't come back here.",
+     "do": "Before the island falls, fight the gang for REAL, permanent EXP. Grind to about Lv6 to make Traverse Town and Wonderland noticeably easier — you can never come back here.",
      "items": [
       {
        "id": "opt-dream-exp",
@@ -139,7 +168,8 @@
       }
      ],
      "missable": true,
-     "missableNote": "Destiny Islands is gone for good after Ch.1 — this free, permanent EXP is only available now."
+     "missableNote": "Destiny Islands is gone for good after Ch.1 — this free, permanent EXP is only available now.",
+     "tip": "Per-opponent: WAKKA — hit the balls he throws (1 EXP each, 2 if you knock one back in mid-air; a return hit stuns him for a few throws). SELPHIE / TIDUS — parry by hitting them as they swing (1 / 2 EXP). After beating all three, talk to Tidus again to fight all three at once (reward: a Potion). RIKU — just mash X to rack up parries; a win gives 5 EXP and a Potion. Equip Stun Impact once you hit Lv6 to speed up the next fights."
     },
     {
      "id": "s1-keyblade",
@@ -187,14 +217,14 @@
     },
     {
      "id": "s2-leon",
-     "title": "2.3 Fight Leon",
+     "title": "2.3 Fight Leon (win it — reward: Elixir)",
      "loc": "District 1 — Accessories shop",
-     "do": "Beat Leon (must win to get the Elixir later). Talk to Yuffie for keyhole lesson; hit the clock to 7:00 for a rare Mythril chest.",
+     "do": "Save with Cid, exit, and you're thrown into a boss fight with Leon. Talk to Yuffie afterward for the keyhole lesson; hit the clock to 7:00 for a rare Mythril chest.",
      "items": [
       {
        "id": "s2-leon-done",
        "cat": "story",
-       "label": "Defeated Leon · learned about keyholes"
+       "label": "Beat Leon (he gifts an Elixir in District 3 later)"
       },
       {
        "id": "opt-tt-clock-mythril",
@@ -206,7 +236,8 @@
        "cat": "optional",
        "label": "Buy Morning Star (Donald) + Smasher (Goofy) from the Items shop"
       }
-     ]
+     ],
+     "tip": "Be sure to WIN. The fight is technically scripted — even if you lose, the story continues — but if you lose you forfeit the Elixir Leon hands you back in District 3 after Guard Armor. You don't have Dodge Roll yet, so assign Potions to Sora beforehand, keep attacking, and heal whenever you dip low. (The on-table Elixir and the 7:00 clock Mythril are yours regardless of the result.)"
     },
     {
      "id": "s2-guard-armor",
@@ -1665,6 +1696,20 @@
    "blurb": "Each cup has Normal / Sora-Alone / Time-Trial challenges. The Hades Cup win is the Proud secret-ending requirement; Gold/Platinum matches are the Ice Titan/Sephiroth superbosses (tracked in Ch.16).",
    "steps": [
     {
+     "id": "cup-strategy",
+     "title": "How to win the cups (general)",
+     "loc": "Olympus Coliseum",
+     "do": "Read before grinding cups.",
+     "items": [
+      {
+       "id": "cup-strategy-read",
+       "cat": "story",
+       "label": "Read the general cup strategy"
+      }
+     ],
+     "tip": "There are NO heals between matches — what you bring is all you get. So: fill Sora's entire ITEM inventory with Ethers (Mega-Ethers for the Hades Cup), and put Thunder + Cure in quick-slots (Menu → Modify). Stand in the middle of a group and cast Thunder — but NOT when yellow Thunder-absorbing mages are present (kill those first). Equip your highest-Attack weapon and accessories. The Time-Trial challenge is the toughest of the three — that's where the Ethers really matter. Note: Combo Plus slows your chain (4 hits instead of 3), which hurts in Time-Trials — unequip it there."
+    },
+    {
      "id": "cup-phil",
      "title": "Phil Cup (after Deep Jungle)",
      "loc": "",
@@ -1685,7 +1730,8 @@
        "cat": "cup",
        "label": "Phil Cup — Time Trial"
       }
-     ]
+     ],
+     "tip": "Matches 1–6 run with no heals between them. Match 7 is CLOUD — you do NOT need to win it (it's very hard) and losing costs nothing, so don't stress. Then Cerberus for the Hero License."
     },
     {
      "id": "cup-pegasus",
@@ -1708,7 +1754,8 @@
        "cat": "cup",
        "label": "Pegasus Cup — Time Trial"
       }
-     ]
+     ],
+     "tip": "Match 9 is Yuffie + Squall. Kill YUFFIE first: deflect her shurikens — a return hit stuns her — then dodge Squall's jump and combo him. Cast Aero on Sora when fighting solo."
     },
     {
      "id": "cup-hercules",
@@ -1731,7 +1778,8 @@
        "cat": "cup",
        "label": "Hercules Cup — Time Trial"
       }
-     ]
+     ],
+     "tip": "You fight HERCULES solo in every challenge. While he glows with a yellow aura he's invincible — pick up a barrel and THROW it at him to break the aura, then attack. Don't try to hit him while he's spinning."
     },
     {
      "id": "cup-hades",
@@ -1754,7 +1802,8 @@
        "cat": "cup",
        "label": "Hades Cup — Time Trial"
       }
-     ]
+     ],
+     "tip": "Match 10 is HADES: when he stands center and spins a ring of fire, follow him and rotate WITH him staying very close — do NOT jump (jumping gets you killed). The match-1 finale is Rock Titan: hit his legs to topple him, then jump up and hit his faces. Winning the Hades Cup is the Proud secret-ending requirement."
     }
    ]
   },

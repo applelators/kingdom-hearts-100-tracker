@@ -13,6 +13,11 @@ binding = "ASSETS"
 pattern = "kh1.nabunan.com"
 custom_domain = true
 
+# Cross-device progress sync: state stored under sha256(passphrase) keys.
+[[kv_namespaces]]
+binding = "KH1_STATE"
+id = "7febe509d2e84cc39794670c5563db3e"
+
 # Deploy to the applelators Cloudflare account:
 #   wrangler deploy
 # Local preview:

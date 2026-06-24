@@ -53,8 +53,16 @@ On **Standard** you instead need all 99 Dalmatians *and* a fully complete Journa
   ability-gated "come back after High Jump / Glide" pickups, the Ch.11 farm-before-it-gets-
   tedious window, the Vine-Jump Journal entry, and the recurring Clock Tower reminder.
 - **Headline meters**: Dalmatians /99, Trinities /46, Ansem's Reports /13, plus overall %.
+- **Strategy tips (💡)** on choice/skill moments — the permanent weapon + growth-speed
+  picks, Riku's race, the Leon fight, and each Olympus Cup's gimmick.
 - **"Up next" banner**, filters (hide-completed / only-missable / search), start countdown,
-  export / import / reset. All progress is localStorage-only.
+  export / import / reset.
+- **Cross-device sync (☁)** — click *Sync*, enter a secret code, and use the same code on
+  every device to share one save (stored in Cloudflare KV under `sha256(code)`; the raw
+  code is never stored). localStorage stays the offline cache; the app pulls on load and on
+  tab-focus, and pushes (debounced) on every change, with a last-write-wins `lastModified`
+  stamp and a 409 guard so an older device can't clobber a newer save. Anyone with the code
+  can read/write that save, so pick a non-obvious one.
 
 ## Data
 

@@ -27,12 +27,14 @@ def phase(pid, title, era, blurb):
     PHASES.append(p)
     return p
 
-def step(p, sid, title, loc="", do="", items=None, missable=False, missableNote=None):
+def step(p, sid, title, loc="", do="", items=None, missable=False, missableNote=None, tip=None):
     s = {"id": sid, "title": title, "loc": loc, "do": do, "items": items or []}
     if missable:
         s["missable"] = True
     if missableNote:
         s["missableNote"] = missableNote
+    if tip:
+        s["tip"] = tip
     p["steps"].append(s)
     return s
 
@@ -59,20 +61,46 @@ def sweep(world, n):
 # ======================================================================
 # 1. THE DREAM START — Destiny Islands
 # ======================================================================
-p = phase("ch01", "1 · The Dream Start", "Destiny Islands", "Tutorial island. Weapon/level choices, Kairi's item fetch quests, first Keyblade.")
-step(p, "s1-weapon", "1.1 Weapon & growth choices", "Dive to the Heart / Beach",
-     "Pick Staff (1st) + Sword (discard) for max 10 MP. Answer Selphie/Wakka/Tidus mostly Option 3 for a faster 41–99 curve.",
-     [chk("s1-weapon-done", "story", "Made weapon + growth-question choices")])
+p = phase("ch01", "1 · The Dream Start", "Destiny Islands", "Tutorial island. The two PERMANENT character-build choices live here (weapon + growth speed), plus Kairi's fetch quests, Riku's race, free EXP, and the first Keyblade.")
+step(p, "s1-weapon", "1.1 Weapon choice — PERMANENT, pick Staff + drop Sword", "Dive to the Heart",
+     "You're shown three weapons — Sword (power), Staff (magic), Shield (defense) — and asked which to TAKE (1st choice) and which to GIVE UP. This is locked for the whole game. The weapon you TAKE sets your endgame MP; the one you GIVE UP shifts when Sora learns abilities.",
+     [chk("s1-weapon-staff", "story", "TOOK the Staff (1st choice) — locks in 10 MP at endgame"),
+      chk("s1-weapon-drop-sword", "story", "GAVE UP the Sword")],
+     tip=("Take the STAFF, give up the SWORD. Why it matters: taking the Staff is the ONLY way to "
+          "reach 10 MP at level 100 — taking Sword or Shield caps you at 8 MP forever, and MP can't "
+          "be raised any other way. KH1's hardest fights (the superbosses, the Hades Cup) lean hard "
+          "on magic, so those 2 extra permanent MP are a big deal. Staff(take)/Sword(drop) gives a "
+          "balanced Lv100 spread (HP 84 · MP 10 · AP 51 · Atk 46 · Def 48 · 6 item / 3 accessory "
+          "slots) and a good ability-learning order. Don't overthink it — this is the single most "
+          "important menu in the game."))
+step(p, "s1-growth", "1.1 Growth choice — answer mostly OPTION 3", "Destiny Islands — seashore",
+     "Talk to Wakka, Selphie and Tidus; each asks a question. Your answers set your leveling CURVE for the whole game (also permanent).",
+     [chk("s1-growth-opt3", "story", "Answered the 3 questions mostly Option 3 (fast 41–99)")],
+     tip=("Pick mostly OPTION 3. The pattern: mostly Option 1 = level fast from 1–40 but slow 41–99; "
+          "Option 2 = even but medium-high requirements the whole way (the worst overall); Option 3 = "
+          "slower 1–40 but faster 41–99. Because there are far MORE levels between 41 and 99 than 1–40, "
+          "Option 3 gets you to high levels fastest over a full 100% run. (cR0Ck uses Option 3.)"))
 step(p, "s1-items", "1.2–1.5 Kairi's item quests", "Destiny Islands",
-     "Gather logs, cloth, rope, mushrooms, coconuts, fish, water, seagull egg.",
+     "Gather logs, cloth, rope, mushrooms, coconuts, fish, water, seagull egg for Kairi.",
      [chk("s1-protect-chain", "treasure", "Protect Chain accessory (run-area cave)"),
-      chk("s1-pretty-stone", "treasure", "Pretty Stone (win Riku's race)"),
       chk("s1-items-done", "story", "Delivered all of Kairi's items")])
-step(p, "s1-spar", "1.2 Optional: free EXP sparring", "Destiny Islands — seashore",
-     "Before leaving the island, fight the gang for REAL EXP (it sticks): Wakka/Selphie (1 EXP), Tidus (2), then all three together (Potion), and Riku (5 EXP + Potion per win). Grind to ~Lv6 (learn Stun Impact at 6) to make Traverse Town/Wonderland much easier — you can't come back here.",
+step(p, "s1-race", "1.3 Riku's race (optional — reward: Pretty Stone)", "Destiny Islands — beach",
+     "Riku challenges you to a race: touch the yellow star at the far end, then run all the way back to the start. Win to get the Pretty Stone.",
+     [chk("s1-pretty-stone", "treasure", "Pretty Stone (win Riku's race)")],
+     tip=("Don't chase Riku — take the shortcut. The moment it starts, drop straight off the ledge and "
+          "hug the RIGHT side of the beach all the way to the end. Go slightly upstairs, then jump "
+          "LEFT four times to reach the yellow star. Touch it and run back along the exact same path "
+          "in reverse. Beating him this way is far easier than racing head-on."))
+step(p, "s1-spar", "1.2 Optional: free EXP sparring (Ch.1 ONLY)", "Destiny Islands — seashore",
+     "Before the island falls, fight the gang for REAL, permanent EXP. Grind to about Lv6 to make Traverse Town and Wonderland noticeably easier — you can never come back here.",
      [opt("dream-exp", "Sparred Wakka/Selphie/Tidus + Riku for free EXP (~Lv6)")],
      missable=True,
-     missableNote="Destiny Islands is gone for good after Ch.1 — this free, permanent EXP is only available now.")
+     missableNote="Destiny Islands is gone for good after Ch.1 — this free, permanent EXP is only available now.",
+     tip=("Per-opponent: WAKKA — hit the balls he throws (1 EXP each, 2 if you knock one back in mid-air; "
+          "a return hit stuns him for a few throws). SELPHIE / TIDUS — parry by hitting them as they "
+          "swing (1 / 2 EXP). After beating all three, talk to Tidus again to fight all three at once "
+          "(reward: a Potion). RIKU — just mash X to rack up parries; a win gives 5 EXP and a Potion. "
+          "Equip Stun Impact once you hit Lv6 to speed up the next fights."))
 step(p, "s1-keyblade", "1.6 The Keyblade", "Destiny Islands (night)",
      "Storm hits; Sora gets the Keyblade and clears the first bosses.",
      [chk("s1-keyblade-done", "story", "Obtained the Keyblade · world falls")])
@@ -86,11 +114,16 @@ step(p, "s2-postcards-1", "2.1 District 1 & 2 postcards", "Districts 1–2",
      [chk("pc-1", "postcard", "Postcard #1 (atop Accessories shop) → Cottage"),
       chk("pc-2", "postcard", "Postcard #2 (Items-shop ceiling fan) → Mythril Shard"),
       chk("pc-3", "postcard", "Postcard #3 (District 2 entrance) → Mega-Potion")])
-step(p, "s2-leon", "2.3 Fight Leon", "District 1 — Accessories shop",
-     "Beat Leon (must win to get the Elixir later). Talk to Yuffie for keyhole lesson; hit the clock to 7:00 for a rare Mythril chest.",
-     [chk("s2-leon-done", "story", "Defeated Leon · learned about keyholes"),
+step(p, "s2-leon", "2.3 Fight Leon (win it — reward: Elixir)", "District 1 — Accessories shop",
+     "Save with Cid, exit, and you're thrown into a boss fight with Leon. Talk to Yuffie afterward for the keyhole lesson; hit the clock to 7:00 for a rare Mythril chest.",
+     [chk("s2-leon-done", "story", "Beat Leon (he gifts an Elixir in District 3 later)"),
       opt("tt-clock-mythril", "Hit the clock to 7:00 → rare Mythril chest (easy to miss)"),
-      opt("tt-weapons", "Buy Morning Star (Donald) + Smasher (Goofy) from the Items shop")])
+      opt("tt-weapons", "Buy Morning Star (Donald) + Smasher (Goofy) from the Items shop")],
+     tip=("Be sure to WIN. The fight is technically scripted — even if you lose, the story continues — "
+          "but if you lose you forfeit the Elixir Leon hands you back in District 3 after Guard Armor. "
+          "You don't have Dodge Roll yet, so assign Potions to Sora beforehand, keep attacking, and "
+          "heal whenever you dip low. (The on-table Elixir and the 7:00 clock Mythril are yours "
+          "regardless of the result.)"))
 step(p, "s2-guard-armor", "2.4 Guard Armor", "District 3",
      "Cutscene boss. Donald/Goofy join; Sora learns Fire, Goofy teaches Dodge Roll.",
      [chk("s2-brave-warrior", "treasure", "Brave Warrior accessory (boss drop)"),
@@ -449,13 +482,36 @@ for color, cnt, labels in TRIN:
 # --- Olympus Cups ---
 p = phase("ref-cups", "✓ Olympus Cups", "Checklist",
           "Each cup has Normal / Sora-Alone / Time-Trial challenges. The Hades Cup win is the Proud secret-ending requirement; Gold/Platinum matches are the Ice Titan/Sephiroth superbosses (tracked in Ch.16).")
+step(p, "cup-strategy", "How to win the cups (general)", "Olympus Coliseum", "Read before grinding cups.",
+     [chk("cup-strategy-read", "story", "Read the general cup strategy")],
+     tip=("There are NO heals between matches — what you bring is all you get. So: fill Sora's entire "
+          "ITEM inventory with Ethers (Mega-Ethers for the Hades Cup), and put Thunder + Cure in "
+          "quick-slots (Menu → Modify). Stand in the middle of a group and cast Thunder — but NOT when "
+          "yellow Thunder-absorbing mages are present (kill those first). Equip your highest-Attack "
+          "weapon and accessories. The Time-Trial challenge is the toughest of the three — that's where "
+          "the Ethers really matter. Note: Combo Plus slows your chain (4 hits instead of 3), which "
+          "hurts in Time-Trials — unequip it there."))
+CUP_TIPS = {
+    "phil": ("Matches 1–6 run with no heals between them. Match 7 is CLOUD — you do NOT need to win it "
+             "(it's very hard) and losing costs nothing, so don't stress. Then Cerberus for the Hero License."),
+    "pegasus": ("Match 9 is Yuffie + Squall. Kill YUFFIE first: deflect her shurikens — a return hit "
+                "stuns her — then dodge Squall's jump and combo him. Cast Aero on Sora when fighting solo."),
+    "hercules": ("You fight HERCULES solo in every challenge. While he glows with a yellow aura he's "
+                 "invincible — pick up a barrel and THROW it at him to break the aura, then attack. "
+                 "Don't try to hit him while he's spinning."),
+    "hades": ("Match 10 is HADES: when he stands center and spins a ring of fire, follow him and rotate "
+              "WITH him staying very close — do NOT jump (jumping gets you killed). The match-1 finale is "
+              "Rock Titan: hit his legs to topple him, then jump up and hit his faces. Winning the Hades "
+              "Cup is the Proud secret-ending requirement."),
+}
 for cup, unlock in [("Phil Cup", "after Deep Jungle"), ("Pegasus Cup", "after Monstro"),
                     ("Hercules Cup", "after Neverland"), ("Hades Cup", "after Hollow Bastion Pt 2")]:
     cid = cup.split()[0].lower()
     step(p, f"cup-{cid}", f"{cup} ({unlock})", "", "",
          [chk(f"cup-{cid}-normal", "cup", f"{cup} — Normal"),
           chk(f"cup-{cid}-solo", "cup", f"{cup} — Sora Alone"),
-          chk(f"cup-{cid}-time", "cup", f"{cup} — Time Trial")])
+          chk(f"cup-{cid}-time", "cup", f"{cup} — Time Trial")],
+         tip=CUP_TIPS[cid])
 
 # --- 100 Acre Wood ---
 p = phase("ref-pooh", "✓ 100 Acre Wood", "Checklist",

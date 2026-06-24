@@ -12,6 +12,95 @@
   let collapsed = new Set();
   let initedCollapse = false;
   let countdownTimer = null;
+  let syncStatus = "";       // short status string shown next to the Sync button
+  let syncInited = false;
+
+  // ---------- cross-device sync (Cloudflare KV via /api/state) ----------
+  const Sync = {
+    pushTimer: null,
+    on() { return ((Store.getPref("syncCode") || "").trim().length >= 4); },
+    setStatus(s) {
+      syncStatus = s;
+      const el = $("#sync-status");
+      if (el) el.textContent = s;
+      const btn = $("#btn-sync");
+      if (btn) btn.textContent = Sync.on() ? "☁ Synced" : "☁ Sync";
+    },
+    url() { return "/api/state?code=" + encodeURIComponent((Store.getPref("syncCode") || "").trim()); },
+
+    async pull() {
+      if (!Sync.on()) return;
+      Sync.setStatus("syncing…");
+      try {
+        const r = await fetch(Sync.url(), { cache: "no-store" });
+        if (!r.ok) { Sync.setStatus("sync error"); return; }
+        const data = await r.json();
+        const remoteMod = Number(data.lastModified) || 0;
+        const localMod = Store.getLastModified();
+        if (data.state && remoteMod > localMod) {
+          Store.applySnapshot(data.state);
+          initedCollapse = false; collapsed = new Set();
+          render();
+          Sync.setStatus("synced ↓ " + Sync.clock());
+        } else if (remoteMod < localMod || !data.state) {
+          await Sync.push();                 // remote is empty/older — upload local
+        } else {
+          Sync.setStatus("synced " + Sync.clock());
+        }
+      } catch (e) { Sync.setStatus("offline (saved locally)"); }
+    },
+
+    schedulePush() {
+      if (!Sync.on()) return;
+      clearTimeout(Sync.pushTimer);
+      Sync.pushTimer = setTimeout(() => Sync.push(), 1000);
+    },
+
+    async push() {
+      if (!Sync.on()) return;
+      const snap = Store.snapshot();
+      Sync.setStatus("saving…");
+      try {
+        const r = await fetch(Sync.url(), {
+          method: "PUT",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ state: snap, lastModified: snap.lastModified })
+        });
+        if (r.status === 409) {
+          const data = await r.json();        // someone saved newer — adopt it
+          if (data.newer && data.newer.state) {
+            Store.applySnapshot(data.newer.state);
+            initedCollapse = false; collapsed = new Set();
+            render();
+            Sync.setStatus("synced ↓ " + Sync.clock());
+          }
+        } else if (r.ok) {
+          Sync.setStatus("synced ↑ " + Sync.clock());
+        } else {
+          Sync.setStatus("sync error");
+        }
+      } catch (e) { Sync.setStatus("offline (saved locally)"); }
+    },
+
+    clock() {
+      const d = new Date();
+      return d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    },
+
+    setCode() {
+      const cur = (Store.getPref("syncCode") || "").trim();
+      const input = window.prompt(
+        "Cross-device sync\n\nEnter a secret code and use the SAME code on every device to share your progress. Minimum 4 characters. Anyone who knows the code can see/edit this save, so make it non-obvious.\n\nLeave blank to turn sync OFF (stay local-only).",
+        cur);
+      if (input === null) return;             // cancelled
+      const c = input.trim();
+      if (c && c.length < 4) { flash("Code must be at least 4 characters"); return; }
+      Store.setPref("syncCode", c);
+      if (c) { flash("Sync on — pulling latest"); Sync.pull(); }
+      else { flash("Sync off (local only)"); Sync.setStatus(""); }
+      const btn = $("#btn-sync"); if (btn) btn.textContent = Sync.on() ? "☁ Synced" : "☁ Sync";
+    }
+  };
 
   // headline meters get big bars; everything else is a minigrid chip
   const HEADLINE = ["puppy", "trinity", "report"];
@@ -148,11 +237,13 @@
       <label class="toggle"><input type="checkbox" id="t-miss" ${Store.getPref("onlyMissable") ? "checked" : ""}/> Only missable steps</label>
       <div class="controls-right">
         <input class="search" id="search" type="search" placeholder="Search items / locations…" value="${esc(Store.getPref("search") || "")}" />
+        <button class="btn" id="btn-sync" title="Sync progress across your devices with a shared code">${Sync.on() ? "☁ Synced" : "☁ Sync"}</button>
         <button class="btn" id="btn-export">Export</button>
         <button class="btn" id="btn-import">Import</button>
         <button class="btn danger" id="btn-reset">Reset</button>
       </div>
-    </div>`;
+    </div>
+    <div class="sync-row"><span class="sync-status" id="sync-status">${esc(syncStatus)}</span></div>`;
   }
 
   function renderFocus() {
@@ -189,10 +280,12 @@
     const items = stepItems(step).map(itemRow).join("");
     const missFlag = step.missable ? `<span class="missable-flag">missable</span>` : "";
     const missNote = step.missableNote ? `<div class="missable-note">⚠ ${esc(step.missableNote)}</div>` : "";
+    const tip = step.tip ? `<div class="tip"><span class="tip-lbl">💡 Strategy</span> ${esc(step.tip)}</div>` : "";
     return `<div class="step ${done ? "done" : ""} ${step.missable ? "missable" : ""}" id="step-${esc(step.id)}">
       <div class="step-head"><span class="stitle">${esc(step.title)}</span> ${missFlag} <span class="step-loc">${esc(step.loc || "")}</span></div>
       ${step.do ? `<div class="step-do">${esc(step.do)}</div>` : ""}
       ${missNote}
+      ${tip}
       <ul class="items">${items}</ul>
     </div>`;
   }
@@ -266,7 +359,7 @@
         if (hide && stepDone(st)) show = false;
         if (onlyMiss && !st.missable) show = false;
         if (q) {
-          const hay = (st.title + " " + (st.loc || "") + " " + (st.do || "") + " " +
+          const hay = (st.title + " " + (st.loc || "") + " " + (st.do || "") + " " + (st.tip || "") + " " +
             stepItems(st).map((i) => i.label).join(" ")).toLowerCase();
           if (!hay.includes(q)) show = false;
         }
@@ -281,17 +374,18 @@
   // ---------- events ----------
   function wire() {
     const li = $("#launch-input");
-    if (li) li.addEventListener("change", (e) => { Store.setPref("launchISO", e.target.value); renderCountdown(); });
+    if (li) li.addEventListener("change", (e) => { Store.setPref("launchISO", e.target.value); renderCountdown(); Sync.schedulePush(); });
 
-    $("#t-hide").addEventListener("change", (e) => { Store.setPref("hideCompleted", e.target.checked); applyFilters(); });
-    $("#t-miss").addEventListener("change", (e) => { Store.setPref("onlyMissable", e.target.checked); applyFilters(); });
+    $("#t-hide").addEventListener("change", (e) => { Store.setPref("hideCompleted", e.target.checked); applyFilters(); Sync.schedulePush(); });
+    $("#t-miss").addEventListener("change", (e) => { Store.setPref("onlyMissable", e.target.checked); applyFilters(); Sync.schedulePush(); });
     $("#search").addEventListener("input", (e) => { Store.setPref("search", e.target.value); applyFilters(); });
 
+    $("#btn-sync").addEventListener("click", () => Sync.setCode());
     $("#btn-export").addEventListener("click", doExport);
     $("#btn-import").addEventListener("click", doImport);
     $("#btn-reset").addEventListener("click", () => {
       if (confirm("Reset ALL progress? (Your start date + settings are kept.)")) {
-        Store.resetProgress(); initedCollapse = false; collapsed = new Set(); render();
+        Store.resetProgress(); initedCollapse = false; collapsed = new Set(); render(); Sync.schedulePush();
       }
     });
 
@@ -307,6 +401,7 @@
       cb.addEventListener("change", () => {
         Store.setChecked(cb.getAttribute("data-id"), cb.checked);
         softRefresh();
+        Sync.schedulePush();
       });
     });
 
@@ -351,7 +446,7 @@
       r.onload = () => {
         try {
           const ok = Store.importState(JSON.parse(r.result));
-          if (ok) { initedCollapse = false; collapsed = new Set(); render(); flash("Progress imported"); }
+          if (ok) { initedCollapse = false; collapsed = new Set(); render(); flash("Progress imported"); Sync.schedulePush(); }
           else flash("Invalid file");
         } catch (e) { flash("Couldn't read that file"); }
       };
@@ -367,6 +462,14 @@
       DATA = data;
       render();
       countdownTimer = setInterval(renderCountdown, 1000);
+      if (!syncInited) {
+        syncInited = true;
+        if (Sync.on()) Sync.pull();
+        // re-pull when returning to this tab/device so you pick up edits made elsewhere
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "visible" && Sync.on()) Sync.pull();
+        });
+      }
     })
     .catch((e) => {
       elApp.innerHTML = `<div class="error">Couldn't load <code>data/route.json</code>.<br/>${esc(e.message)}</div>`;
