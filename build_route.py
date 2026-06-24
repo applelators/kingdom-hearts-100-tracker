@@ -42,6 +42,10 @@ def chk(iid, cat, label, conf=None):
         it["conf"] = conf
     return it
 
+def opt(iid, label, conf=None):
+    """An optional-but-beneficial activity (free EXP, power gear, money/heal tricks)."""
+    return chk("opt-" + iid, "optional", label, conf)
+
 def pups(triad_lo, loc_label):
     """A Dalmatian triad chest. triad_lo is the lowest puppy number (e.g. 16 -> 16,17,18)."""
     a = triad_lo
@@ -60,10 +64,15 @@ step(p, "s1-weapon", "1.1 Weapon & growth choices", "Dive to the Heart / Beach",
      "Pick Staff (1st) + Sword (discard) for max 10 MP. Answer Selphie/Wakka/Tidus mostly Option 3 for a faster 41–99 curve.",
      [chk("s1-weapon-done", "story", "Made weapon + growth-question choices")])
 step(p, "s1-items", "1.2–1.5 Kairi's item quests", "Destiny Islands",
-     "Gather logs, cloth, rope, mushrooms, coconuts, fish, water, seagull egg. Optional: spar Wakka/Tidus/Selphie/Riku for real EXP (level ~6).",
+     "Gather logs, cloth, rope, mushrooms, coconuts, fish, water, seagull egg.",
      [chk("s1-protect-chain", "treasure", "Protect Chain accessory (run-area cave)"),
       chk("s1-pretty-stone", "treasure", "Pretty Stone (win Riku's race)"),
       chk("s1-items-done", "story", "Delivered all of Kairi's items")])
+step(p, "s1-spar", "1.2 Optional: free EXP sparring", "Destiny Islands — seashore",
+     "Before leaving the island, fight the gang for REAL EXP (it sticks): Wakka/Selphie (1 EXP), Tidus (2), then all three together (Potion), and Riku (5 EXP + Potion per win). Grind to ~Lv6 (learn Stun Impact at 6) to make Traverse Town/Wonderland much easier — you can't come back here.",
+     [opt("dream-exp", "Sparred Wakka/Selphie/Tidus + Riku for free EXP (~Lv6)")],
+     missable=True,
+     missableNote="Destiny Islands is gone for good after Ch.1 — this free, permanent EXP is only available now.")
 step(p, "s1-keyblade", "1.6 The Keyblade", "Destiny Islands (night)",
      "Storm hits; Sora gets the Keyblade and clears the first bosses.",
      [chk("s1-keyblade-done", "story", "Obtained the Keyblade · world falls")])
@@ -79,7 +88,9 @@ step(p, "s2-postcards-1", "2.1 District 1 & 2 postcards", "Districts 1–2",
       chk("pc-3", "postcard", "Postcard #3 (District 2 entrance) → Mega-Potion")])
 step(p, "s2-leon", "2.3 Fight Leon", "District 1 — Accessories shop",
      "Beat Leon (must win to get the Elixir later). Talk to Yuffie for keyhole lesson; hit the clock to 7:00 for a rare Mythril chest.",
-     [chk("s2-leon-done", "story", "Defeated Leon · learned about keyholes")])
+     [chk("s2-leon-done", "story", "Defeated Leon · learned about keyholes"),
+      opt("tt-clock-mythril", "Hit the clock to 7:00 → rare Mythril chest (easy to miss)"),
+      opt("tt-weapons", "Buy Morning Star (Donald) + Smasher (Goofy) from the Items shop")])
 step(p, "s2-guard-armor", "2.4 Guard Armor", "District 3",
      "Cutscene boss. Donald/Goofy join; Sora learns Fire, Goofy teaches Dodge Roll.",
      [chk("s2-brave-warrior", "treasure", "Brave Warrior accessory (boss drop)"),
@@ -108,7 +119,8 @@ step(p, "s3-trickmaster", "3.1 Trickmaster", "Bizarre Room",
       chk("s3-trickmaster-done", "story", "Defeated Trickmaster")])
 step(p, "s3-back-traverse", "3.2 Back in Traverse", "Traverse Town District 1",
      "With Blizzard, douse the entrance candles for a Defense Up. Sweep Wonderland.",
-     [sweep("wonderland", 18)])
+     [opt("megapotion-loop", "Infinite cheap Mega-Potions: give a flower a Potion → Hi-Potion, then the red flower → Mega-Potion (exit/re-enter to reset)"),
+      sweep("wonderland", 18)])
 
 # ======================================================================
 # 4. OLYMPUS COLISEUM
@@ -128,6 +140,7 @@ step(p, "s4-optional", "4.2–4.3 Thunder/Gizmo optionals", "Traverse Town / Won
      [chk("pc-7", "postcard", "Postcard #7 (Gizmo clock) → Megalixir"),
       chk("pc-8", "postcard", "Postcard #8 (Gizmo clock) → Orichalcum"),
       pups(58, "Wonderland hidden flower area (Thunder the bells)"),
+      opt("obsidian-ring", "Buy Obsidian Ring(s) in Traverse (Dark def stacks, Atk/Def +1) before the cups"),
       sweep("olympus", 8)])
 
 # ======================================================================
@@ -301,6 +314,8 @@ step(p, "s12-bosses", "12.x Maleficent & Riku-Ansem", "Chapel / Grand Hall",
 step(p, "s12-kairi", "12.x Traverse — Oathkeeper", "Traverse Town — Secret Waterway",
      "White Trinity Orichalcum, story scenes → Oathkeeper Keyblade, Lord Fortune for Donald.",
      [chk("s12-oathkeeper", "keyblade", "Oathkeeper Keyblade"),
+      opt("fortress-weapons", "Farm the Fortress Heartless for Defender (Goofy, Atk +15) and Wizard's Relic (Donald, Atk +8/MP +2) — better than their ultimate weapons (0.2% drop, 0.5% w/ 3× Lucky Strike)"),
+      opt("stealth-soldier", "Stealth Soldier (invisible; Stop it) drops Energy Stones — best farmed at the Grand Hall in Ch.14"),
       sweep("bastion1", 35)])
 
 # ======================================================================
@@ -335,6 +350,7 @@ step(p, "s14-hades", "14.x Hades Cup", "Olympus Coliseum",
      [chk("rep-8", "report", "Ansem's Report 8 (Hades, Hades Cup match 10)"),
       chk("s14-hades-cup", "story", "Hades Cup cleared (Proud secret-ending requirement)"),
       chk("s14-shiva-belt", "treasure", "Shiva Belt (Blizzaga torches at Olympus)"),
+      opt("hades-cup-gear", "Hades Cup challenge gear: Genju Shield (Atk +10, match 44), Save the Queen (Donald, Solo) & Save the King (Goofy, Atk +11/MP +2 — best shield, Time Trial)"),
       sweep("bastion2", 9)])
 
 # ======================================================================
@@ -500,6 +516,26 @@ step(p, "synth-milestones", "Crafting milestones", "Traverse Town — Moguri sho
       chk("synth-30", "synth", "30 recipes crafted → final tier unlocks"),
       chk("synth-33", "synth", "33 recipes crafted → Ultima Weapon available")])
 
+# --- Optional boosts & leveling ---
+p = phase("ref-optional", "✓ Optional boosts & leveling", "Checklist",
+          "Not required for 100%, but strong quality-of-life: free/efficient EXP, EXP-boosting gear, money/heal tricks, and the best optional weapons to chase. Each is also flagged in-route where it first applies.")
+step(p, "opt-exp", "Free & efficient EXP", "", "",
+     [opt("dream-exp-ref", "Destiny Islands sparring (Ch.1) — free permanent EXP to ~Lv6 before you ever leave"),
+      opt("exp-gear", "Equip EXP gear while grinding: EXP Ring (100 Acre Wood), EXP Bracelet (synthesis), EXP Necklace (Unknown/Xemnas)"),
+      opt("level-hades", "Level 1→100: chill repeats of the Hades Cup"),
+      opt("level-rock-titan", "Rock Titan = ~8000 EXP per kill"),
+      opt("level-ice-titan", "Ice Titan + Tech Boost ability = 125 EXP per deflected stalactite")])
+step(p, "opt-econ", "Money & healing tricks", "", "",
+     [opt("megapotion-loop-ref", "Wonderland flower loop → endless cheap Mega-Potions"),
+      opt("bambi-synth", "Summon Bambi to rain HP + synthesis items (drops vary by world)"),
+      opt("black-mushroom", "Black/Gravity-weak mobs drop sellable items for easy Munny")])
+step(p, "opt-gear", "Best optional weapons & accessories", "", "",
+     [opt("defender-shield", "Defender (Goofy, Atk +15) — Hollow Bastion Heartless"),
+      opt("wizards-relic", "Wizard's Relic (Donald, Atk +8/MP +2) — Hollow Bastion Heartless"),
+      opt("save-the-king-queen", "Save the King (Goofy) + Save the Queen (Donald) — Hades Cup challenges"),
+      opt("genji-shield", "Genju Shield (Atk +10) — Hades Cup match 44"),
+      opt("titan-chains", "Craft 3× Titan Chain (Atk +4/Def +2 each) for the Sephiroth fight")])
+
 # ======================================================================
 # CATEGORIES + META
 # ======================================================================
@@ -516,6 +552,7 @@ CATEGORIES = {
     "gummi":    {"icon": "🚀", "label": "Gummi blueprints"},
     "synth":    {"icon": "🔨", "label": "Synthesis"},
     "summon":   {"icon": "✨", "label": "Summons"},
+    "optional": {"icon": "💪", "label": "Optional boosts"},
     "boss":     {"icon": "💀", "label": "Superbosses"},
     "keyblade": {"icon": "🗝", "label": "Keyblades"},
     "ability":  {"icon": "⚡", "label": "Abilities & magic"},

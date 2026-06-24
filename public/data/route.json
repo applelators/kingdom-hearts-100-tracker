@@ -58,6 +58,10 @@
    "icon": "✨",
    "label": "Summons"
   },
+  "optional": {
+   "icon": "💪",
+   "label": "Optional boosts"
+  },
   "boss": {
    "icon": "💀",
    "label": "Superbosses"
@@ -103,7 +107,7 @@
      "id": "s1-items",
      "title": "1.2–1.5 Kairi's item quests",
      "loc": "Destiny Islands",
-     "do": "Gather logs, cloth, rope, mushrooms, coconuts, fish, water, seagull egg. Optional: spar Wakka/Tidus/Selphie/Riku for real EXP (level ~6).",
+     "do": "Gather logs, cloth, rope, mushrooms, coconuts, fish, water, seagull egg.",
      "items": [
       {
        "id": "s1-protect-chain",
@@ -121,6 +125,21 @@
        "label": "Delivered all of Kairi's items"
       }
      ]
+    },
+    {
+     "id": "s1-spar",
+     "title": "1.2 Optional: free EXP sparring",
+     "loc": "Destiny Islands — seashore",
+     "do": "Before leaving the island, fight the gang for REAL EXP (it sticks): Wakka/Selphie (1 EXP), Tidus (2), then all three together (Potion), and Riku (5 EXP + Potion per win). Grind to ~Lv6 (learn Stun Impact at 6) to make Traverse Town/Wonderland much easier — you can't come back here.",
+     "items": [
+      {
+       "id": "opt-dream-exp",
+       "cat": "optional",
+       "label": "Sparred Wakka/Selphie/Tidus + Riku for free EXP (~Lv6)"
+      }
+     ],
+     "missable": true,
+     "missableNote": "Destiny Islands is gone for good after Ch.1 — this free, permanent EXP is only available now."
     },
     {
      "id": "s1-keyblade",
@@ -176,6 +195,16 @@
        "id": "s2-leon-done",
        "cat": "story",
        "label": "Defeated Leon · learned about keyholes"
+      },
+      {
+       "id": "opt-tt-clock-mythril",
+       "cat": "optional",
+       "label": "Hit the clock to 7:00 → rare Mythril chest (easy to miss)"
+      },
+      {
+       "id": "opt-tt-weapons",
+       "cat": "optional",
+       "label": "Buy Morning Star (Donald) + Smasher (Goofy) from the Items shop"
       }
      ]
     },
@@ -291,6 +320,11 @@
      "do": "With Blizzard, douse the entrance candles for a Defense Up. Sweep Wonderland.",
      "items": [
       {
+       "id": "opt-megapotion-loop",
+       "cat": "optional",
+       "label": "Infinite cheap Mega-Potions: give a flower a Potion → Hi-Potion, then the red flower → Mega-Potion (exit/re-enter to reset)"
+      },
+      {
        "id": "sweep-wonderland",
        "cat": "treasure",
        "label": "All 18 treasure chests in this world swept"
@@ -366,6 +400,11 @@
        "id": "pup-58",
        "cat": "puppy",
        "label": "Dalmatians 58, 59, 60 — Wonderland hidden flower area (Thunder the bells)"
+      },
+      {
+       "id": "opt-obsidian-ring",
+       "cat": "optional",
+       "label": "Buy Obsidian Ring(s) in Traverse (Dark def stacks, Atk/Def +1) before the cups"
       },
       {
        "id": "sweep-olympus",
@@ -1031,6 +1070,16 @@
        "label": "Oathkeeper Keyblade"
       },
       {
+       "id": "opt-fortress-weapons",
+       "cat": "optional",
+       "label": "Farm the Fortress Heartless for Defender (Goofy, Atk +15) and Wizard's Relic (Donald, Atk +8/MP +2) — better than their ultimate weapons (0.2% drop, 0.5% w/ 3× Lucky Strike)"
+      },
+      {
+       "id": "opt-stealth-soldier",
+       "cat": "optional",
+       "label": "Stealth Soldier (invisible; Stop it) drops Energy Stones — best farmed at the Grand Hall in Ch.14"
+      },
+      {
        "id": "sweep-bastion1",
        "cat": "treasure",
        "label": "All 35 treasure chests in this world swept"
@@ -1157,6 +1206,11 @@
        "id": "s14-shiva-belt",
        "cat": "treasure",
        "label": "Shiva Belt (Blizzaga torches at Olympus)"
+      },
+      {
+       "id": "opt-hades-cup-gear",
+       "cat": "optional",
+       "label": "Hades Cup challenge gear: Genju Shield (Atk +10, match 44), Save the Queen (Donald, Solo) & Save the King (Goofy, Atk +11/MP +2 — best shield, Time Trial)"
       },
       {
        "id": "sweep-bastion2",
@@ -2020,6 +2074,103 @@
        "id": "synth-33",
        "cat": "synth",
        "label": "33 recipes crafted → Ultima Weapon available"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ref-optional",
+   "title": "✓ Optional boosts & leveling",
+   "era": "Checklist",
+   "blurb": "Not required for 100%, but strong quality-of-life: free/efficient EXP, EXP-boosting gear, money/heal tricks, and the best optional weapons to chase. Each is also flagged in-route where it first applies.",
+   "steps": [
+    {
+     "id": "opt-exp",
+     "title": "Free & efficient EXP",
+     "loc": "",
+     "do": "",
+     "items": [
+      {
+       "id": "opt-dream-exp-ref",
+       "cat": "optional",
+       "label": "Destiny Islands sparring (Ch.1) — free permanent EXP to ~Lv6 before you ever leave"
+      },
+      {
+       "id": "opt-exp-gear",
+       "cat": "optional",
+       "label": "Equip EXP gear while grinding: EXP Ring (100 Acre Wood), EXP Bracelet (synthesis), EXP Necklace (Unknown/Xemnas)"
+      },
+      {
+       "id": "opt-level-hades",
+       "cat": "optional",
+       "label": "Level 1→100: chill repeats of the Hades Cup"
+      },
+      {
+       "id": "opt-level-rock-titan",
+       "cat": "optional",
+       "label": "Rock Titan = ~8000 EXP per kill"
+      },
+      {
+       "id": "opt-level-ice-titan",
+       "cat": "optional",
+       "label": "Ice Titan + Tech Boost ability = 125 EXP per deflected stalactite"
+      }
+     ]
+    },
+    {
+     "id": "opt-econ",
+     "title": "Money & healing tricks",
+     "loc": "",
+     "do": "",
+     "items": [
+      {
+       "id": "opt-megapotion-loop-ref",
+       "cat": "optional",
+       "label": "Wonderland flower loop → endless cheap Mega-Potions"
+      },
+      {
+       "id": "opt-bambi-synth",
+       "cat": "optional",
+       "label": "Summon Bambi to rain HP + synthesis items (drops vary by world)"
+      },
+      {
+       "id": "opt-black-mushroom",
+       "cat": "optional",
+       "label": "Black/Gravity-weak mobs drop sellable items for easy Munny"
+      }
+     ]
+    },
+    {
+     "id": "opt-gear",
+     "title": "Best optional weapons & accessories",
+     "loc": "",
+     "do": "",
+     "items": [
+      {
+       "id": "opt-defender-shield",
+       "cat": "optional",
+       "label": "Defender (Goofy, Atk +15) — Hollow Bastion Heartless"
+      },
+      {
+       "id": "opt-wizards-relic",
+       "cat": "optional",
+       "label": "Wizard's Relic (Donald, Atk +8/MP +2) — Hollow Bastion Heartless"
+      },
+      {
+       "id": "opt-save-the-king-queen",
+       "cat": "optional",
+       "label": "Save the King (Goofy) + Save the Queen (Donald) — Hades Cup challenges"
+      },
+      {
+       "id": "opt-genji-shield",
+       "cat": "optional",
+       "label": "Genju Shield (Atk +10) — Hades Cup match 44"
+      },
+      {
+       "id": "opt-titan-chains",
+       "cat": "optional",
+       "label": "Craft 3× Titan Chain (Atk +4/Def +2 each) for the Sephiroth fight"
       }
      ]
     }

@@ -16,7 +16,7 @@
   // headline meters get big bars; everything else is a minigrid chip
   const HEADLINE = ["puppy", "trinity", "report"];
   const MINI_ORDER = ["postcard", "summon", "keyblade", "ability", "cup", "pooh",
-                      "mushroom", "clock", "gummi", "synth", "boss", "treasure", "story"];
+                      "mushroom", "clock", "gummi", "synth", "boss", "optional", "treasure", "story"];
   // Dalmatians are stored as 33 triad checkboxes but shown as /99 (×3)
   const PUP_MULT = 3;
 
