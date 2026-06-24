@@ -8,6 +8,11 @@ compatibility_date = "2025-06-01"
 directory = "./public"
 binding = "ASSETS"
 
+# Custom domain — provisions DNS + cert for kh1.nabunan.com (zone in this account).
+[[routes]]
+pattern = "kh1.nabunan.com"
+custom_domain = true
+
 # Deploy to the applelators Cloudflare account:
 #   wrangler deploy
 # Local preview:
