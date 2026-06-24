@@ -1,0 +1,2029 @@
+{
+ "meta": {
+  "game": "Kingdom Hearts Final Mix (KH1) — Switch 2",
+  "subtitle": "First-playthrough · 100% Jiminy's Journal in one route · Proud",
+  "version": "0.1.0",
+  "difficulty": "Proud",
+  "scope": "Mirrors cR0Ck's spoiler-free GameFAQs '100% Story' walkthrough (KH HD I.5+II.5 ReMIX, v4) chapter-for-chapter: 17 story chapters plus checklist phases for the aggregate Journal systems. Targets full Journal 100% on Proud — 99 Dalmatians, 46 Trinities, 13 Ansem's Reports, all postcards, Olympus Cups, 100 Acre Wood, White Mushroom masters, Clock Tower, Gummi blueprints, Synthesis (incl. Ultima Weapon), and every Final Mix superboss.",
+  "secretEnding": "Proud: win the Hades Cup. Standard: free all 99 Dalmatians AND complete the whole Journal (incl. all Trinities/minigames). Beginner: secret ending is impossible. This tracker targets Proud.",
+  "confidencePolicy": "Route order, collectible placement and missable callouts follow cR0Ck's walkthrough. The in-game Jiminy's Journal % is the ultimate source of truth — trust it over any wording here.",
+  "remakeNote": "Built pre-release on the HD Final Mix (1.5) baseline. Patch in any Switch 2 remaster changes on launch night — all data lives in this one JSON file."
+ },
+ "categories": {
+  "treasure": {
+   "icon": "🎁",
+   "label": "Treasure sweeps"
+  },
+  "puppy": {
+   "icon": "🐕",
+   "label": "Dalmatians"
+  },
+  "trinity": {
+   "icon": "🔱",
+   "label": "Trinities"
+  },
+  "report": {
+   "icon": "📕",
+   "label": "Ansem's Reports"
+  },
+  "postcard": {
+   "icon": "✉️",
+   "label": "Postcards"
+  },
+  "cup": {
+   "icon": "🏆",
+   "label": "Olympus Cups"
+  },
+  "pooh": {
+   "icon": "🍯",
+   "label": "100 Acre Wood"
+  },
+  "mushroom": {
+   "icon": "🍄",
+   "label": "Mushrooms"
+  },
+  "clock": {
+   "icon": "🕛",
+   "label": "Clock Tower"
+  },
+  "gummi": {
+   "icon": "🚀",
+   "label": "Gummi blueprints"
+  },
+  "synth": {
+   "icon": "🔨",
+   "label": "Synthesis"
+  },
+  "summon": {
+   "icon": "✨",
+   "label": "Summons"
+  },
+  "boss": {
+   "icon": "💀",
+   "label": "Superbosses"
+  },
+  "keyblade": {
+   "icon": "🗝",
+   "label": "Keyblades"
+  },
+  "ability": {
+   "icon": "⚡",
+   "label": "Abilities & magic"
+  },
+  "story": {
+   "icon": "📖",
+   "label": "Story / milestones"
+  },
+  "misc": {
+   "icon": "•",
+   "label": "misc"
+  }
+ },
+ "phases": [
+  {
+   "id": "ch01",
+   "title": "1 · The Dream Start",
+   "era": "Destiny Islands",
+   "blurb": "Tutorial island. Weapon/level choices, Kairi's item fetch quests, first Keyblade.",
+   "steps": [
+    {
+     "id": "s1-weapon",
+     "title": "1.1 Weapon & growth choices",
+     "loc": "Dive to the Heart / Beach",
+     "do": "Pick Staff (1st) + Sword (discard) for max 10 MP. Answer Selphie/Wakka/Tidus mostly Option 3 for a faster 41–99 curve.",
+     "items": [
+      {
+       "id": "s1-weapon-done",
+       "cat": "story",
+       "label": "Made weapon + growth-question choices"
+      }
+     ]
+    },
+    {
+     "id": "s1-items",
+     "title": "1.2–1.5 Kairi's item quests",
+     "loc": "Destiny Islands",
+     "do": "Gather logs, cloth, rope, mushrooms, coconuts, fish, water, seagull egg. Optional: spar Wakka/Tidus/Selphie/Riku for real EXP (level ~6).",
+     "items": [
+      {
+       "id": "s1-protect-chain",
+       "cat": "treasure",
+       "label": "Protect Chain accessory (run-area cave)"
+      },
+      {
+       "id": "s1-pretty-stone",
+       "cat": "treasure",
+       "label": "Pretty Stone (win Riku's race)"
+      },
+      {
+       "id": "s1-items-done",
+       "cat": "story",
+       "label": "Delivered all of Kairi's items"
+      }
+     ]
+    },
+    {
+     "id": "s1-keyblade",
+     "title": "1.6 The Keyblade",
+     "loc": "Destiny Islands (night)",
+     "do": "Storm hits; Sora gets the Keyblade and clears the first bosses.",
+     "items": [
+      {
+       "id": "s1-keyblade-done",
+       "cat": "story",
+       "label": "Obtained the Keyblade · world falls"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ch02",
+   "title": "2 · Traverse Town",
+   "era": "Hub",
+   "blurb": "First hub. Postcards #1–6, Blue Trinity intro, Leon, Dalmatians house quest begins. [19 treasures]",
+   "steps": [
+    {
+     "id": "s2-postcards-1",
+     "title": "2.1 District 1 & 2 postcards",
+     "loc": "Districts 1–2",
+     "do": "Climb behind the Accessories shop and hit the Items-shop fan; mail at the red mailbox. Enter the Dalmatians house to start the 99-puppy quest.",
+     "items": [
+      {
+       "id": "pc-1",
+       "cat": "postcard",
+       "label": "Postcard #1 (atop Accessories shop) → Cottage"
+      },
+      {
+       "id": "pc-2",
+       "cat": "postcard",
+       "label": "Postcard #2 (Items-shop ceiling fan) → Mythril Shard"
+      },
+      {
+       "id": "pc-3",
+       "cat": "postcard",
+       "label": "Postcard #3 (District 2 entrance) → Mega-Potion"
+      }
+     ]
+    },
+    {
+     "id": "s2-leon",
+     "title": "2.3 Fight Leon",
+     "loc": "District 1 — Accessories shop",
+     "do": "Beat Leon (must win to get the Elixir later). Talk to Yuffie for keyhole lesson; hit the clock to 7:00 for a rare Mythril chest.",
+     "items": [
+      {
+       "id": "s2-leon-done",
+       "cat": "story",
+       "label": "Defeated Leon · learned about keyholes"
+      }
+     ]
+    },
+    {
+     "id": "s2-guard-armor",
+     "title": "2.4 Guard Armor",
+     "loc": "District 3",
+     "do": "Cutscene boss. Donald/Goofy join; Sora learns Fire, Goofy teaches Dodge Roll.",
+     "items": [
+      {
+       "id": "s2-brave-warrior",
+       "cat": "treasure",
+       "label": "Brave Warrior accessory (boss drop)"
+      },
+      {
+       "id": "s2-guard-armor-done",
+       "cat": "story",
+       "label": "Defeated Guard Armor · party formed"
+      }
+     ]
+    },
+    {
+     "id": "s2-bluetrinity",
+     "title": "2.5 Blue Trinity sweep",
+     "loc": "All districts",
+     "do": "Learn Trinity Jump; grab the remaining postcards and sweep the world.",
+     "items": [
+      {
+       "id": "pc-4",
+       "cat": "postcard",
+       "label": "Postcard #4 (Blue Trinity, District 1) → Mega-Ether"
+      },
+      {
+       "id": "pc-5",
+       "cat": "postcard",
+       "label": "Postcard #5 (blue safe, District 1) → Mythril"
+      },
+      {
+       "id": "pc-6",
+       "cat": "postcard",
+       "label": "Postcard #6 (District 3 balcony) → Elixir"
+      },
+      {
+       "id": "s2-merlin",
+       "cat": "story",
+       "label": "Opened Merlin's house (Fire on the door)"
+      },
+      {
+       "id": "sweep-traverse",
+       "cat": "treasure",
+       "label": "All 19 treasure chests in this world swept"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ch03",
+   "title": "3 · Wonderland",
+   "era": "Difficulty 1",
+   "blurb": "Trickmaster, Blizzard, White-Mushroom Fire/Blizzard/Thunder masters begin. [18 treasures]",
+   "steps": [
+    {
+     "id": "s3-trial",
+     "title": "3.1 Prove Alice innocent",
+     "loc": "Lotus Forest / Bizarre Room",
+     "do": "Collect 4 evidences; navigate the scrambled Bizarre Rooms. Grab Blizzard.",
+     "items": [
+      {
+       "id": "pup-16",
+       "cat": "puppy",
+       "label": "Dalmatians 16, 17, 18 — Lotus Forest, on the lilies"
+      },
+      {
+       "id": "pup-13",
+       "cat": "puppy",
+       "label": "Dalmatians 13, 14, 15 — Queen's Court special area (via the pond)"
+      },
+      {
+       "id": "s3-blizzard",
+       "cat": "ability",
+       "label": "Blizzard magic"
+      },
+      {
+       "id": "s3-darkmatter",
+       "cat": "treasure",
+       "label": "Dark Matter (Tea Garden balcony)"
+      }
+     ]
+    },
+    {
+     "id": "s3-trickmaster",
+     "title": "3.1 Trickmaster",
+     "loc": "Bizarre Room",
+     "do": "Boss. Use Fire. Reward: Ifrit's Horn accessory + Navi-G piece.",
+     "items": [
+      {
+       "id": "s3-ifrit-horn",
+       "cat": "treasure",
+       "label": "Ifrit's Horn accessory (boss drop)"
+      },
+      {
+       "id": "s3-trickmaster-done",
+       "cat": "story",
+       "label": "Defeated Trickmaster"
+      }
+     ]
+    },
+    {
+     "id": "s3-back-traverse",
+     "title": "3.2 Back in Traverse",
+     "loc": "Traverse Town District 1",
+     "do": "With Blizzard, douse the entrance candles for a Defense Up. Sweep Wonderland.",
+     "items": [
+      {
+       "id": "sweep-wonderland",
+       "cat": "treasure",
+       "label": "All 18 treasure chests in this world swept"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ch04",
+   "title": "4 · Olympus Coliseum",
+   "era": "Difficulty 2",
+   "blurb": "Phil Cup, Cerberus, Hero License, Cloud. [8 treasures]",
+   "steps": [
+    {
+     "id": "s4-entrance",
+     "title": "4.1 Coliseum entrance",
+     "loc": "Olympus — Open area",
+     "do": "Blue Trinities flank the entrance.",
+     "items": [
+      {
+       "id": "pup-22",
+       "cat": "puppy",
+       "label": "Dalmatians 22, 23, 24 — Olympus entrance (Blue Trinity, right)"
+      },
+      {
+       "id": "s4-thunder",
+       "cat": "ability",
+       "label": "Thunder magic (Phil's trials)"
+      }
+     ]
+    },
+    {
+     "id": "s4-cerberus",
+     "title": "4.1 Cerberus",
+     "loc": "Coliseum",
+     "do": "Clear matches 1–6 (no heals), skip/lose match 7 (Cloud), then beat Cerberus. Get Hero License + Sonic Blade.",
+     "items": [
+      {
+       "id": "s4-inferno-band",
+       "cat": "treasure",
+       "label": "Inferno Band accessory (Cerberus)"
+      },
+      {
+       "id": "s4-sonic-blade",
+       "cat": "ability",
+       "label": "Sonic Blade ability (Cloud scene)"
+      },
+      {
+       "id": "s4-cerberus-done",
+       "cat": "story",
+       "label": "Defeated Cerberus · Hero License"
+      }
+     ]
+    },
+    {
+     "id": "s4-optional",
+     "title": "4.2–4.3 Thunder/Gizmo optionals",
+     "loc": "Traverse Town / Wonderland",
+     "do": "Thunder the District 3 wire to power the Gizmo shop → Postcards #7–8. Thunder the Wonderland bells for puppies.",
+     "items": [
+      {
+       "id": "pc-7",
+       "cat": "postcard",
+       "label": "Postcard #7 (Gizmo clock) → Megalixir"
+      },
+      {
+       "id": "pc-8",
+       "cat": "postcard",
+       "label": "Postcard #8 (Gizmo clock) → Orichalcum"
+      },
+      {
+       "id": "pup-58",
+       "cat": "puppy",
+       "label": "Dalmatians 58, 59, 60 — Wonderland hidden flower area (Thunder the bells)"
+      },
+      {
+       "id": "sweep-olympus",
+       "cat": "treasure",
+       "label": "All 8 treasure chests in this world swept"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ch05",
+   "title": "5 · Deep Jungle",
+   "era": "Difficulty 3",
+   "blurb": "Tarzan, Sabor, Clayton/Stealth Sneak, Red Trinity, Cure, Jungle Slider + Vine-Jump minigames. [30 treasures]",
+   "steps": [
+    {
+     "id": "s5-story",
+     "title": "5.1 Through the jungle",
+     "loc": "Treehouse → Camp → Vines → Grotto",
+     "do": "Slide-puzzle of areas; gather puppies, learn Cure after Clayton.",
+     "items": [
+      {
+       "id": "pup-34",
+       "cat": "puppy",
+       "label": "Dalmatians 34, 35, 36 — Camp (Blue Trinity)"
+      },
+      {
+       "id": "pup-25",
+       "cat": "puppy",
+       "label": "Dalmatians 25, 26, 27 — Hippos area"
+      },
+      {
+       "id": "pup-28",
+       "cat": "puppy",
+       "label": "Dalmatians 28, 29, 30 — Vines-2 area"
+      },
+      {
+       "id": "pup-31",
+       "cat": "puppy",
+       "label": "Dalmatians 31, 32, 33 — Waterfall Grotto"
+      },
+      {
+       "id": "s5-white-fang",
+       "cat": "treasure",
+       "label": "White Fang accessory (Sabor)"
+      },
+      {
+       "id": "s5-cure",
+       "cat": "ability",
+       "label": "Cure magic (after Clayton/Stealth Sneak)"
+      },
+      {
+       "id": "s5-jungle-king",
+       "cat": "keyblade",
+       "label": "Jungle King Keyblade (world cleared)"
+      },
+      {
+       "id": "s5-red-trinity",
+       "cat": "ability",
+       "label": "Red Trinity power (world cleared)"
+      }
+     ]
+    },
+    {
+     "id": "s5-traverse",
+     "title": "5.2 Traverse Town — new Gummi",
+     "loc": "Traverse Town",
+     "do": "Red Trinity alley puppies; Secret Waterway opens (Leon, Earthshine Gem → Simba). Bell puzzle → Opposite Armor → Aero. Synthesis still locked.",
+     "items": [
+      {
+       "id": "pup-4",
+       "cat": "puppy",
+       "label": "Dalmatians 4, 5, 6 — District 1 alley (Red Trinity)"
+      },
+      {
+       "id": "pup-10",
+       "cat": "puppy",
+       "label": "Dalmatians 10, 11, 12 — Secret Waterway (behind Leon's stairs)"
+      },
+      {
+       "id": "s5-earthshine",
+       "cat": "treasure",
+       "label": "Earthshine Gem (Leon) → Simba summon"
+      },
+      {
+       "id": "s5-aero",
+       "cat": "ability",
+       "label": "Aero magic (Opposite Armor)"
+      },
+      {
+       "id": "s5-tt-keyhole",
+       "cat": "story",
+       "label": "Locked the Traverse Town keyhole"
+      }
+     ]
+    },
+    {
+     "id": "s5-simba",
+     "title": "5.2 Simba summon",
+     "loc": "Merlin's house",
+     "do": "Give Cid the Old Book → deliver to Merlin → learn Simba from the fairy. 100 Acre Wood Part 1 now available.",
+     "items": [
+      {
+       "id": "s5-simba-summon",
+       "cat": "summon",
+       "label": "Simba summon"
+      }
+     ]
+    },
+    {
+     "id": "s5-minigames",
+     "title": "5.3 Jungle Slider + Vine Jump",
+     "loc": "Deep Jungle (Tunnel / Vines)",
+     "do": "Slider levels 1–5 give Elixir/AP+/Dark Matter/DIF+/ATT+. Win ≥1 Vine-Jump round — REQUIRED for the Journal/secret ending.",
+     "items": [
+      {
+       "id": "s5-slider",
+       "cat": "story",
+       "label": "Jungle Slider levels 1–5 cleared (perma-boost rewards)"
+      },
+      {
+       "id": "s5-vinejump",
+       "cat": "story",
+       "label": "Vine-Jump minigame entered in Journal (win ≥1)"
+      },
+      {
+       "id": "sweep-jungle",
+       "cat": "treasure",
+       "label": "All 30 treasure chests in this world swept"
+      }
+     ],
+     "missable": true,
+     "missableNote": "The Vine-Jump minigame must be played at least once or the Journal can't hit 100% (and on Standard the secret ending won't unlock)."
+    }
+   ]
+  },
+  {
+   "id": "ch06",
+   "title": "6 · Agrabah",
+   "era": "Difficulty 4",
+   "blurb": "Cave of Wonders, Jafar/Genie Jafar, Ansem's Report 1, Green Trinity → Synthesis unlocks, Genie summon. [41 treasures]",
+   "steps": [
+    {
+     "id": "s6-cave",
+     "title": "6.1 Cave of Wonders",
+     "loc": "Agrabah / Cave of Wonders",
+     "do": "Pot Centipede, Abu statue puzzles, the first Pooh Torn Page, Jafar then Genie Jafar.",
+     "items": [
+      {
+       "id": "pup-37",
+       "cat": "puppy",
+       "label": "Dalmatians 37, 38, 39 — Cave of Wonders — Treasure Room"
+      },
+      {
+       "id": "s6-ray-of-light",
+       "cat": "treasure",
+       "label": "Ray of Light accessory (Pot Centipede)"
+      },
+      {
+       "id": "s6-torn-page-1",
+       "cat": "story",
+       "label": "Torn Page (Dark Chamber) — 100 Acre Wood"
+      },
+      {
+       "id": "rep-1",
+       "cat": "report",
+       "label": "Ansem's Report 1 (Genie Jafar)"
+      },
+      {
+       "id": "s6-genie",
+       "cat": "summon",
+       "label": "Genie summon"
+      },
+      {
+       "id": "s6-three-wishes",
+       "cat": "keyblade",
+       "label": "Three Wishes Keyblade"
+      },
+      {
+       "id": "s6-green-trinity",
+       "cat": "ability",
+       "label": "Green Trinity power"
+      }
+     ],
+     "missableNote": "Push the rock off the Bottomless-Hall cliff and into the Relic Chamber to reach the rare Mythril; the Silent Chamber door needs a later jump upgrade."
+    },
+    {
+     "id": "s6-synthesis",
+     "title": "6.2 Synthesis unlocks",
+     "loc": "Traverse Town — Moguri shop",
+     "do": "Green Trinity opens the Moguri Synthesis shop. Postcard #9. Pooh Part 2 → Naturespark → Bambi summon.",
+     "items": [
+      {
+       "id": "pup-7",
+       "cat": "puppy",
+       "label": "Dalmatians 7, 8, 9 — Synthesis room (behind the Moogle)"
+      },
+      {
+       "id": "pc-9",
+       "cat": "postcard",
+       "label": "Postcard #9 (synthesis-room flier) → AP Up"
+      },
+      {
+       "id": "s6-bambi",
+       "cat": "summon",
+       "label": "Bambi summon (Naturespark → fairy)"
+      },
+      {
+       "id": "s6-synth-open",
+       "cat": "story",
+       "label": "Moguri Synthesis shop opened"
+      },
+      {
+       "id": "sweep-agrabah",
+       "cat": "treasure",
+       "label": "All 41 treasure chests in this world swept"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ch07",
+   "title": "7 · Monstro",
+   "era": "Difficulty 5",
+   "blurb": "Parasite Cage ×2, High Jump, Stop, Geppetto's Gummi blueprints, Dumbo summon. [29 treasures]",
+   "steps": [
+    {
+     "id": "s7-inside",
+     "title": "7.1 Inside the whale",
+     "loc": "Chambers 1–6 / The Bowels",
+     "do": "Parasite Cage → Cheer; then learn High Jump from the chest by Geppetto.",
+     "items": [
+      {
+       "id": "pup-55",
+       "cat": "puppy",
+       "label": "Dalmatians 55, 56, 57 — Chamber 3 (higher level)"
+      },
+      {
+       "id": "pup-76",
+       "cat": "puppy",
+       "label": "Dalmatians 76, 77, 78 — Chamber 6 (stairs room)"
+      },
+      {
+       "id": "pup-79",
+       "cat": "puppy",
+       "label": "Dalmatians 79, 80, 81 — Chamber 6 (low, blue platforms)"
+      },
+      {
+       "id": "pup-73",
+       "cat": "puppy",
+       "label": "Dalmatians 73, 74, 75 — Outside, by Geppetto's boat"
+      },
+      {
+       "id": "s7-torn-page-2",
+       "cat": "story",
+       "label": "Torn Page (Chamber 6 blue platforms)"
+      },
+      {
+       "id": "s7-high-jump",
+       "cat": "ability",
+       "label": "High Jump (group ability)"
+      },
+      {
+       "id": "s7-stop",
+       "cat": "ability",
+       "label": "Stop magic (2nd Parasite Cage)"
+      }
+     ]
+    },
+    {
+     "id": "s7-agrabah-hj",
+     "title": "7.x Agrabah w/ High Jump",
+     "loc": "Agrabah / Cave of Wonders",
+     "do": "Return for the high-jump puppies and chests.",
+     "items": [
+      {
+       "id": "pup-52",
+       "cat": "puppy",
+       "label": "Dalmatians 52, 53, 54 — Agrabah Palace gates (High Jump)"
+      },
+      {
+       "id": "pup-49",
+       "cat": "puppy",
+       "label": "Dalmatians 49, 50, 51 — Cave of Wonders entrance (barrel + jump)"
+      },
+      {
+       "id": "pup-46",
+       "cat": "puppy",
+       "label": "Dalmatians 46, 47, 48 — Dark Chamber statue room (High Jump)"
+      }
+     ]
+    },
+    {
+     "id": "s7-traverse",
+     "title": "7.x Geppetto & Dumbo",
+     "loc": "Traverse Town",
+     "do": "Geppetto's home → Gummi blueprints (enter 30× → Chocobo; more by mob-kill count). Merlin → Spellbinder Keyblade + Dumbo summon. Buy Magus Staff / Gigas Fist.",
+     "items": [
+      {
+       "id": "s7-dumbo",
+       "cat": "summon",
+       "label": "Dumbo summon"
+      },
+      {
+       "id": "s7-spellbinder",
+       "cat": "keyblade",
+       "label": "Spellbinder Keyblade (all base spells)"
+      },
+      {
+       "id": "sweep-monstro",
+       "cat": "treasure",
+       "label": "All 29 treasure chests in this world swept"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ch08",
+   "title": "8 · Atlantica",
+   "era": "Difficulty 5",
+   "blurb": "Swimming world. Ursula ×2, Mermaid Kick, Ansem's Report 3, Crabclaw. [23 treasures]",
+   "steps": [
+    {
+     "id": "s8-explore",
+     "title": "8.1 Undersea search",
+     "loc": "Triton's Palace / Sunken Ship",
+     "do": "Crystal Trident quest, Shark, the Pooh Torn Page in Ariel's grotto, Ursula in her cove → Mermaid Kick.",
+     "items": [
+      {
+       "id": "s8-torn-page-3",
+       "cat": "story",
+       "label": "Torn Page (Ariel's Grotto) — grab it"
+      },
+      {
+       "id": "s8-mermaid-kick",
+       "cat": "ability",
+       "label": "Mermaid Kick (group ability, Ursula)"
+      }
+     ]
+    },
+    {
+     "id": "s8-ursula",
+     "title": "8.1 Ursula (rematch)",
+     "loc": "??? against the current",
+     "do": "Final Ursula. Thundara upgrade, Report 3, then Crabclaw on locking the world.",
+     "items": [
+      {
+       "id": "rep-3",
+       "cat": "report",
+       "label": "Ansem's Report 3 (Ursula rematch)"
+      },
+      {
+       "id": "s8-crabclaw",
+       "cat": "keyblade",
+       "label": "Crabclaw Keyblade (world locked)"
+      },
+      {
+       "id": "sweep-atlantica",
+       "cat": "treasure",
+       "label": "All 23 treasure chests in this world swept"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ch09",
+   "title": "9 · Halloween Town",
+   "era": "Difficulty 6",
+   "blurb": "Lock/Shock/Barrel, Oogie Boogie ×2, Ansem's Report 7, Aero White-Mushroom master, Dream Shield. [11 treasures]",
+   "steps": [
+    {
+     "id": "s9-oogie",
+     "title": "9.1 Oogie's Manor",
+     "loc": "Halloween Town",
+     "do": "Jack joins. Torn Page in the lab. Lock/Shock/Barrel, then Oogie Boogie and his Manor.",
+     "items": [
+      {
+       "id": "s9-torn-page-4",
+       "cat": "story",
+       "label": "Torn Page (Laboratory library)"
+      },
+      {
+       "id": "s9-holy-circlet",
+       "cat": "treasure",
+       "label": "Holy Circlet accessory (Oogie)"
+      },
+      {
+       "id": "rep-7",
+       "cat": "report",
+       "label": "Ansem's Report 7 (Oogie Boogie)"
+      },
+      {
+       "id": "s9-pumpkinhead",
+       "cat": "keyblade",
+       "label": "Pumpkinhead Keyblade (Oogie's Manor)"
+      }
+     ]
+    },
+    {
+     "id": "s9-redtrinity",
+     "title": "9.x Red Trinity puppies",
+     "loc": "Oogie's Manor",
+     "do": "Bring Donald+Goofy for the Red Trinity, then grab the guillotine-pit puppies.",
+     "items": [
+      {
+       "id": "pup-40",
+       "cat": "puppy",
+       "label": "Dalmatians 40, 41, 42 — Oogie's Manor (Red Trinity arc + guillotine pit)"
+      }
+     ]
+    },
+    {
+     "id": "s9-dreamshield",
+     "title": "9.x Dream Shield",
+     "loc": "Traverse Town — Merlin's",
+     "do": "Last Pooh page available. If all 7 White-Mushroom masters are collected, Merlin gives the Dream Shield (Goofy).",
+     "items": [
+      {
+       "id": "s9-dream-shield",
+       "cat": "treasure",
+       "label": "Dream Shield (all White-Mushroom masters)",
+       "conf": "verify"
+      },
+      {
+       "id": "sweep-halloween",
+       "cat": "treasure",
+       "label": "All 11 treasure chests in this world swept"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ch10",
+   "title": "10 · Neverland",
+   "era": "Difficulty 7",
+   "blurb": "Anti-Sora, Captain Hook, Glide, Report 9, Tinker Bell, Clock Tower opens, Hercules Cup → Yellow Trinity. [28 treasures]",
+   "steps": [
+    {
+     "id": "s10-ship",
+     "title": "10.1 Captain Hook's ship",
+     "loc": "The hold → deck → clock tower",
+     "do": "Anti-Sora, fix the clock, Hook. Glide + Tinker Bell + Fairy Harp + Report 9.",
+     "items": [
+      {
+       "id": "pup-88",
+       "cat": "puppy",
+       "label": "Dalmatians 88, 89, 90 — Captain's room (green chest)"
+      },
+      {
+       "id": "pup-82",
+       "cat": "puppy",
+       "label": "Dalmatians 82, 83, 84 — The hold (fly to the roof beam)"
+      },
+      {
+       "id": "rep-9",
+       "cat": "report",
+       "label": "Ansem's Report 9 (Captain Hook)"
+      },
+      {
+       "id": "s10-tinkerbell",
+       "cat": "summon",
+       "label": "Tinker Bell summon"
+      },
+      {
+       "id": "s10-fairy-harp",
+       "cat": "keyblade",
+       "label": "Fairy Harp Keyblade"
+      },
+      {
+       "id": "s10-glide",
+       "cat": "ability",
+       "label": "Glide (group ability)"
+      }
+     ]
+    },
+    {
+     "id": "s10-hercules",
+     "title": "10.x Hercules Cup → Yellow Trinity",
+     "loc": "Olympus Coliseum",
+     "do": "Clear Pegasus then Hercules Cup (beat Hercules) to earn Olympia + the Yellow Trinity. Lock the Coliseum keyhole (Yellow Trinity by Phil).",
+     "items": [
+      {
+       "id": "s10-olympia",
+       "cat": "keyblade",
+       "label": "Olympia Keyblade (Hercules Cup)"
+      },
+      {
+       "id": "s10-yellow-trinity",
+       "cat": "ability",
+       "label": "Yellow Trinity power"
+      },
+      {
+       "id": "s10-herc-shield",
+       "cat": "treasure",
+       "label": "Herc's Shield (Hercules Cup normal)"
+      }
+     ]
+    },
+    {
+     "id": "s10-glide-sweep",
+     "title": "10.x Glide / Yellow-Trinity sweep",
+     "loc": "Wonderland / Jungle / Halloween / Agrabah / Neverland / Traverse",
+     "do": "Use Glide + Yellow Trinity to mop up puppies and chests across worlds; the 81-puppy Dalmatians reward is Ultima-G.",
+     "items": [
+      {
+       "id": "pup-19",
+       "cat": "puppy",
+       "label": "Dalmatians 19, 20, 21 — Wonderland tea garden (Glide)"
+      },
+      {
+       "id": "pup-70",
+       "cat": "puppy",
+       "label": "Dalmatians 70, 71, 72 — Halloween — above the laboratory (Glide)"
+      },
+      {
+       "id": "pup-64",
+       "cat": "puppy",
+       "label": "Dalmatians 64, 65, 66 — Halloween — pumpkin graveyard secret (Glide)"
+      },
+      {
+       "id": "pup-85",
+       "cat": "puppy",
+       "label": "Dalmatians 85, 86, 87 — Neverland hold secret room (Yellow Trinity)"
+      },
+      {
+       "id": "pup-1",
+       "cat": "puppy",
+       "label": "Dalmatians 1, 2, 3 — Traverse — behind Merlin's house (Glide)"
+      },
+      {
+       "id": "sweep-neverland",
+       "cat": "treasure",
+       "label": "All 28 treasure chests in this world swept"
+      }
+     ]
+    },
+    {
+     "id": "s10-clock",
+     "title": "10.x Clock Tower rewards",
+     "loc": "Neverland — Clock Tower (world-select Option 3)",
+     "do": "Time-gated perma-boosts; the door matching your play-hour glows. See the Clock Tower checklist phase — keep checking it after every world.",
+     "items": [
+      {
+       "id": "s10-clock-started",
+       "cat": "story",
+       "label": "Started collecting Clock Tower rewards"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ch11",
+   "title": "11 · Mastery Pt 1 · Moguri Craft",
+   "era": "Mastery",
+   "blurb": "Farm every synthesis material BEFORE the next world floods old worlds with tougher mobs. Unlock Encounter Plus at 15 crafts.",
+   "steps": [
+    {
+     "id": "s11-farm",
+     "title": "Material farming sweep",
+     "loc": "All worlds (per the guide's checklist)",
+     "do": "Collect the full shard/stone/gem set the guide lists, then craft all available items once (16 crafts → Encounter Plus).",
+     "items": [
+      {
+       "id": "s11-materials",
+       "cat": "story",
+       "label": "All Ch.11 synthesis materials farmed (shards/stones/gems)"
+      },
+      {
+       "id": "s11-lucky-strike",
+       "cat": "ability",
+       "label": "Lucky Strike on Sora/Donald/Goofy (rare-drop boost)"
+      },
+      {
+       "id": "s11-encounter-plus",
+       "cat": "ability",
+       "label": "Encounter Plus unlocked (15 crafts)"
+      }
+     ],
+     "missable": true,
+     "missableNote": "The guide farms here because after Hollow Bastion, stronger Heartless mix into earlier worlds and make material farming far more tedious. Not blocked — just much faster now."
+    }
+   ]
+  },
+  {
+   "id": "ch12",
+   "title": "12 · Hollow Bastion Pt 1",
+   "era": "Difficulty 9",
+   "blurb": "Riku, Maleficent (+Dragon), Riku-Ansem, White Trinity, library puzzle, Report 5, Oathkeeper, Mushu. [35 treasures]",
+   "steps": [
+    {
+     "id": "s12-fortress",
+     "title": "12.1 Into the fortress",
+     "loc": "Entrance / Waterway / Library",
+     "do": "Crystal-lift puzzles + the library book puzzle. White Trinity from Riku; puppies along the way.",
+     "items": [
+      {
+       "id": "pup-91",
+       "cat": "puppy",
+       "label": "Dalmatians 91, 92, 93 — Entrance ice platforms"
+      },
+      {
+       "id": "pup-97",
+       "cat": "puppy",
+       "label": "Dalmatians 97, 98, 99 — Library — Lift Stop (Gravira the platform)"
+      },
+      {
+       "id": "pup-94",
+       "cat": "puppy",
+       "label": "Dalmatians 94, 95, 96 — Outside area 16 (Gravira the caged chest)"
+      },
+      {
+       "id": "s12-white-trinity",
+       "cat": "ability",
+       "label": "White Trinity (Trinity Detect) — beat Riku"
+      },
+      {
+       "id": "s12-ramuh-crystal",
+       "cat": "story",
+       "label": "Turned the High-Tower red crystal blue (unlocks Ramuh Belt later)",
+       "conf": "verify"
+      }
+     ],
+     "missableNote": "Turn the High-Tower red crystal blue now, or you can't reach the Ramuh Belt in the library on the 2nd visit."
+    },
+    {
+     "id": "s12-bosses",
+     "title": "12.x Maleficent & Riku-Ansem",
+     "loc": "Chapel / Grand Hall",
+     "do": "Maleficent → Dragon Maleficent (Fireglow → Mushu), Report 5, Riku-Ansem → Ragnarok.",
+     "items": [
+      {
+       "id": "rep-5",
+       "cat": "report",
+       "label": "Ansem's Report 5 (Maleficent)"
+      },
+      {
+       "id": "s12-fireglow",
+       "cat": "summon",
+       "label": "Mushu summon (Fireglow gem)"
+      },
+      {
+       "id": "s12-ragnarok",
+       "cat": "ability",
+       "label": "Ragnarok ability (Riku-Ansem)"
+      }
+     ]
+    },
+    {
+     "id": "s12-kairi",
+     "title": "12.x Traverse — Oathkeeper",
+     "loc": "Traverse Town — Secret Waterway",
+     "do": "White Trinity Orichalcum, story scenes → Oathkeeper Keyblade, Lord Fortune for Donald.",
+     "items": [
+      {
+       "id": "s12-oathkeeper",
+       "cat": "keyblade",
+       "label": "Oathkeeper Keyblade"
+      },
+      {
+       "id": "sweep-bastion1",
+       "cat": "treasure",
+       "label": "All 35 treasure chests in this world swept"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ch13",
+   "title": "13 · Mastery Pt 2 · World Trinities",
+   "era": "Mastery",
+   "blurb": "White-Trinity sweep across all worlds (now that you have it) + Lady Luck Keyblade. Last puppies hide here too.",
+   "steps": [
+    {
+     "id": "s13-sweep",
+     "title": "White Trinity world sweep",
+     "loc": "All worlds",
+     "do": "Hit every White Trinity for unique items/keyblades. See the Trinity checklist phase to tick each one.",
+     "items": [
+      {
+       "id": "pup-67",
+       "cat": "puppy",
+       "label": "Dalmatians 67, 68, 69 — Halloween pumpkin graveyard (White Trinity)"
+      },
+      {
+       "id": "pup-43",
+       "cat": "puppy",
+       "label": "Dalmatians 43, 44, 45 — Neverland ship deck (White Trinity)"
+      },
+      {
+       "id": "s13-lady-luck",
+       "cat": "keyblade",
+       "label": "Lady Luck Keyblade (Wonderland White Trinity)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ch14",
+   "title": "14 · Hollow Bastion Pt 2",
+   "era": "Difficulty 9",
+   "blurb": "Behemoth, Divine Rose, last Dalmatians, Aerith's 4 Reports + Report 8 (Hades Cup), Shiva Belt. [9 treasures]",
+   "steps": [
+    {
+     "id": "s14-return",
+     "title": "14.x Second descent",
+     "loc": "Fortress / Grand Hall",
+     "do": "Trinity quest completes (all 46). Ramuh Belt, Divine Rose from Belle, last puppies, Behemoth → Omega Arts.",
+     "items": [
+      {
+       "id": "pup-61",
+       "cat": "puppy",
+       "label": "Dalmatians 61, 62, 63 — Grand Hall (last triad — Glide to it)"
+      },
+      {
+       "id": "s14-divine-rose",
+       "cat": "keyblade",
+       "label": "Divine Rose Keyblade (Belle)"
+      },
+      {
+       "id": "s14-oblivion",
+       "cat": "keyblade",
+       "label": "Oblivion Keyblade (Grand Hall, Glide)"
+      },
+      {
+       "id": "s14-omega-arts",
+       "cat": "treasure",
+       "label": "Omega Arts accessory (Behemoth)"
+      },
+      {
+       "id": "s14-all-puppies",
+       "cat": "story",
+       "label": "All 99 Dalmatians freed (Full Gummi Set + Aeroga)"
+      }
+     ]
+    },
+    {
+     "id": "s14-aerith",
+     "title": "14.x Aerith's reports",
+     "loc": "Library",
+     "do": "Aerith hands over Reports 2, 4, 6, 10 and upgrades Cure→Curaga.",
+     "items": [
+      {
+       "id": "rep-2",
+       "cat": "report",
+       "label": "Ansem's Report 2 (Aerith)"
+      },
+      {
+       "id": "rep-4",
+       "cat": "report",
+       "label": "Ansem's Report 4 (Aerith)"
+      },
+      {
+       "id": "rep-6",
+       "cat": "report",
+       "label": "Ansem's Report 6 (Aerith)"
+      },
+      {
+       "id": "rep-10",
+       "cat": "report",
+       "label": "Ansem's Report 10 (Aerith)"
+      }
+     ]
+    },
+    {
+     "id": "s14-hades",
+     "title": "14.x Hades Cup",
+     "loc": "Olympus Coliseum",
+     "do": "The Hades Cup (unlocks now). Match 10 Hades → Report 8 + Antimaga. Winning the cup = the Proud secret-ending requirement. Blizzaga torches → Shiva Belt.",
+     "items": [
+      {
+       "id": "rep-8",
+       "cat": "report",
+       "label": "Ansem's Report 8 (Hades, Hades Cup match 10)"
+      },
+      {
+       "id": "s14-hades-cup",
+       "cat": "story",
+       "label": "Hades Cup cleared (Proud secret-ending requirement)"
+      },
+      {
+       "id": "s14-shiva-belt",
+       "cat": "treasure",
+       "label": "Shiva Belt (Blizzaga torches at Olympus)"
+      },
+      {
+       "id": "sweep-bastion2",
+       "cat": "treasure",
+       "label": "All 9 treasure chests in this world swept"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ch15",
+   "title": "15 · End of the World Pt 1",
+   "era": "Difficulty 10",
+   "blurb": "Invisible labyrinth, Terminus linked-worlds, Chernabog, Superglide. STOP before the Final Rest door. [28 treasures]",
+   "steps": [
+    {
+     "id": "s15-explore",
+     "title": "15.x Through End of the World",
+     "loc": "Labyrinth / Terminus / Final Rest",
+     "do": "Behemoth gauntlets, the per-world gem chests, Mighty Shield, Chernabog → Superglide. Then the LAST farming spot (Gale / Stormy Stone / final White Mushroom).",
+     "items": [
+      {
+       "id": "s15-mighty-shield",
+       "cat": "treasure",
+       "label": "Mighty Shield (Neverland door, Terminus)"
+      },
+      {
+       "id": "s15-superglide",
+       "cat": "ability",
+       "label": "Superglide (Chernabog)"
+      },
+      {
+       "id": "s15-final-farm",
+       "cat": "story",
+       "label": "Final-area materials farmed (Gale, Stormy Stone)"
+      },
+      {
+       "id": "sweep-eotw",
+       "cat": "treasure",
+       "label": "All 28 treasure chests in this world swept"
+      }
+     ],
+     "missable": true,
+     "missableNote": "⚠ POINT OF NO RETURN: opening the graceful door in Final Rest starts the unskippable endgame. Do ALL side quests (Ch.16) and a full Journal audit FIRST."
+    }
+   ]
+  },
+  {
+   "id": "ch16",
+   "title": "16 · Mastery Pt 3 · Superbosses & Ultima",
+   "era": "★ Endgame",
+   "blurb": "The hardest content: all FM superbosses, Ultima Weapon synthesis (33/33), and the final Journal audit. This is real 100%.",
+   "steps": [
+    {
+     "id": "s16-craft",
+     "title": "Craft everything (33/33)",
+     "loc": "Traverse Town — Moguri shop",
+     "do": "Buy enough Orichalcum to finish, craft all 33 recipes including the EXP Bracelet, Fantasista, Seven Elements, and the Ultima Weapon.",
+     "items": [
+      {
+       "id": "s16-synth-33",
+       "cat": "story",
+       "label": "All 33 synthesis recipes crafted"
+      },
+      {
+       "id": "s16-ultima",
+       "cat": "keyblade",
+       "label": "★ Ultima Weapon synthesized"
+      }
+     ]
+    },
+    {
+     "id": "s16-superbosses",
+     "title": "The Final Mix superbosses",
+     "loc": "Neverland / Deep Jungle / Agrabah / Hollow Bastion / Olympus",
+     "do": "Each is its own Journal entry — all required for true 100%.",
+     "items": [
+      {
+       "id": "boss-phantom",
+       "cat": "boss",
+       "label": "★ Phantom (Neverland Clock Tower) → Stopga + Clock Tower reopens"
+      },
+      {
+       "id": "boss-kurtzisa",
+       "cat": "boss",
+       "label": "★ Kurt Zisa (Agrabah, talk to Carpet) → Report 11"
+      },
+      {
+       "id": "rep-11",
+       "cat": "report",
+       "label": "Ansem's Report 11 (Kurt Zisa)"
+      },
+      {
+       "id": "boss-unknown",
+       "cat": "boss",
+       "label": "★ Unknown / Xemnas (Hollow Bastion chapel) → Report 13"
+      },
+      {
+       "id": "rep-13",
+       "cat": "report",
+       "label": "Ansem's Report 13 (Unknown / Xemnas)"
+      },
+      {
+       "id": "boss-icetitan",
+       "cat": "boss",
+       "label": "★ Ice Titan (Olympus Gold Match)"
+      },
+      {
+       "id": "boss-sephiroth",
+       "cat": "boss",
+       "label": "★ Sephiroth (Olympus Platinum Match) → Report 12"
+      },
+      {
+       "id": "rep-12",
+       "cat": "report",
+       "label": "Ansem's Report 12 (Sephiroth)"
+      },
+      {
+       "id": "boss-potscorpion",
+       "cat": "boss",
+       "label": "Pot Scorpion (Agrabah Palace gates) — Mythril Stone farm"
+      }
+     ],
+     "missableNote": "Phantom must be beaten to re-open the Neverland Clock Tower. Win the Hades Cup (Ch.14) for the Proud secret ending."
+    },
+    {
+     "id": "s16-audit",
+     "title": "Final Journal audit",
+     "loc": "Menu → Jiminy's Journal",
+     "do": "Before the finale: 99 Dalmatians, 46 Trinities, 13 Reports, all postcards mailed, all Cups, 100 Acre Wood done, White Mushroom masters, Clock Tower rewards, Gummi blueprints, Synthesis 33/33, all summons. Confirm Journal reads 100%.",
+     "items": [
+      {
+       "id": "s16-audit-done",
+       "cat": "story",
+       "label": "Jiminy's Journal confirmed at 100%"
+      }
+     ],
+     "missable": true,
+     "missableNote": "Last checkpoint before the point of no return. Anything not done here is far harder (or impossible) to finish after the finale."
+    }
+   ]
+  },
+  {
+   "id": "ch17",
+   "title": "17 · End of the World Pt 2",
+   "era": "Finale",
+   "blurb": "The final boss gauntlet and the secret movie.",
+   "steps": [
+    {
+     "id": "s17-finale",
+     "title": "17.x The final door",
+     "loc": "Final Rest → World of Chaos",
+     "do": "Ansem, Darkside, Ansem, then World of Chaos (7 rounds). Lock the final door. Watch the secret movie after the credits.",
+     "items": [
+      {
+       "id": "s17-finale-done",
+       "cat": "story",
+       "label": "Beat the World of Chaos · KH locked"
+      },
+      {
+       "id": "s17-secret-movie",
+       "cat": "story",
+       "label": "★ Watched the secret movie (Proud / 100% Journal)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ref-trinity",
+   "title": "✓ Trinity Marks (46)",
+   "era": "Checklist",
+   "blurb": "Every Trinity in the game, per cR0Ck's Trinity reference. Blue×17, Red×6, Green×9, Yellow×4, White×10. Many are story-required; tick each as you use it.",
+   "steps": [
+    {
+     "id": "tri-blue",
+     "title": "Blue Trinity (17)",
+     "loc": "",
+     "do": "",
+     "items": [
+      {
+       "id": "tri-blue-1",
+       "cat": "trinity",
+       "label": "Blue Trinity — Traverse — Postcard #4 (District 1)"
+      },
+      {
+       "id": "tri-blue-2",
+       "cat": "trinity",
+       "label": "Blue Trinity — Traverse — 60 Munny (near world exit)"
+      },
+      {
+       "id": "tri-blue-3",
+       "cat": "trinity",
+       "label": "Blue Trinity — Traverse — Postcard #5 (near District 2)"
+      },
+      {
+       "id": "tri-blue-4",
+       "cat": "trinity",
+       "label": "Blue Trinity — Traverse — Merlin's house (Camping set)"
+      },
+      {
+       "id": "tri-blue-5",
+       "cat": "trinity",
+       "label": "Blue Trinity — Wonderland — Lotus Forest entrance"
+      },
+      {
+       "id": "tri-blue-6",
+       "cat": "trinity",
+       "label": "Blue Trinity — Wonderland — Lotus Forest (pond area)"
+      },
+      {
+       "id": "tri-blue-7",
+       "cat": "trinity",
+       "label": "Blue Trinity — Olympus — left of entrance (Mythril Shard)"
+      },
+      {
+       "id": "tri-blue-8",
+       "cat": "trinity",
+       "label": "Blue Trinity — Olympus — right of entrance (Dalmatians 22–24)"
+      },
+      {
+       "id": "tri-blue-9",
+       "cat": "trinity",
+       "label": "Blue Trinity — Deep Jungle — Camp (Dalmatians 34–36)"
+      },
+      {
+       "id": "tri-blue-10",
+       "cat": "trinity",
+       "label": "Blue Trinity — Deep Jungle — Upper tree area"
+      },
+      {
+       "id": "tri-blue-11",
+       "cat": "trinity",
+       "label": "Blue Trinity — Agrabah — Bazaar"
+      },
+      {
+       "id": "tri-blue-12",
+       "cat": "trinity",
+       "label": "Blue Trinity — Agrabah — under the Bottomless Hall"
+      },
+      {
+       "id": "tri-blue-13",
+       "cat": "trinity",
+       "label": "Blue Trinity — Monstro — Chamber 5"
+      },
+      {
+       "id": "tri-blue-14",
+       "cat": "trinity",
+       "label": "Blue Trinity — Monstro — outside (2 Potions + Cottage)"
+      },
+      {
+       "id": "tri-blue-15",
+       "cat": "trinity",
+       "label": "Blue Trinity — Monstro — The Throat"
+      },
+      {
+       "id": "tri-blue-16",
+       "cat": "trinity",
+       "label": "Blue Trinity — Hollow Bastion — Waterway small room"
+      },
+      {
+       "id": "tri-blue-17",
+       "cat": "trinity",
+       "label": "Blue Trinity — Hollow Bastion — Waterway Up"
+      }
+     ]
+    },
+    {
+     "id": "tri-red",
+     "title": "Red Trinity (6)",
+     "loc": "",
+     "do": "",
+     "items": [
+      {
+       "id": "tri-red-1",
+       "cat": "trinity",
+       "label": "Red Trinity — Traverse — District 1 alley (Dalmatians 4–6)"
+      },
+      {
+       "id": "tri-red-2",
+       "cat": "trinity",
+       "label": "Red Trinity — Traverse — Secret Waterway (story)"
+      },
+      {
+       "id": "tri-red-3",
+       "cat": "trinity",
+       "label": "Red Trinity — Traverse — above Gizmo building (bell)"
+      },
+      {
+       "id": "tri-red-4",
+       "cat": "trinity",
+       "label": "Red Trinity — Agrabah — Cave Treasure Room"
+      },
+      {
+       "id": "tri-red-5",
+       "cat": "trinity",
+       "label": "Red Trinity — Halloween — Oogie's Manor"
+      },
+      {
+       "id": "tri-red-6",
+       "cat": "trinity",
+       "label": "Red Trinity — Hollow Bastion — Hall upper level (story)"
+      }
+     ]
+    },
+    {
+     "id": "tri-green",
+     "title": "Green Trinity (9)",
+     "loc": "",
+     "do": "",
+     "items": [
+      {
+       "id": "tri-green-1",
+       "cat": "trinity",
+       "label": "Green Trinity — Traverse — Accessories shop (opens Synthesis)"
+      },
+      {
+       "id": "tri-green-2",
+       "cat": "trinity",
+       "label": "Green Trinity — Wonderland — Rabbit Hole (Elixir)"
+      },
+      {
+       "id": "tri-green-3",
+       "cat": "trinity",
+       "label": "Green Trinity — Wonderland — Bizarre Room chimney (shrink)"
+      },
+      {
+       "id": "tri-green-4",
+       "cat": "trinity",
+       "label": "Green Trinity — Olympus — near world exit (Mythril)"
+      },
+      {
+       "id": "tri-green-5",
+       "cat": "trinity",
+       "label": "Green Trinity — Deep Jungle — above the Tunnel"
+      },
+      {
+       "id": "tri-green-6",
+       "cat": "trinity",
+       "label": "Green Trinity — Agrabah — Storage room (AP+)"
+      },
+      {
+       "id": "tri-green-7",
+       "cat": "trinity",
+       "label": "Green Trinity — Monstro — atop Geppetto's boat (High Jump)"
+      },
+      {
+       "id": "tri-green-8",
+       "cat": "trinity",
+       "label": "Green Trinity — Neverland — pirate-flag room (story)"
+      },
+      {
+       "id": "tri-green-9",
+       "cat": "trinity",
+       "label": "Green Trinity — Hollow Bastion — Library (yellow book, story)"
+      }
+     ]
+    },
+    {
+     "id": "tri-yellow",
+     "title": "Yellow Trinity (4)",
+     "loc": "",
+     "do": "",
+     "items": [
+      {
+       "id": "tri-yellow-1",
+       "cat": "trinity",
+       "label": "Yellow Trinity — Traverse — behind Merlin's house (AP+)"
+      },
+      {
+       "id": "tri-yellow-2",
+       "cat": "trinity",
+       "label": "Yellow Trinity — Olympus — inside, by Phil (locks world)"
+      },
+      {
+       "id": "tri-yellow-3",
+       "cat": "trinity",
+       "label": "Yellow Trinity — Agrabah — Cave Hall floor"
+      },
+      {
+       "id": "tri-yellow-4",
+       "cat": "trinity",
+       "label": "Yellow Trinity — Neverland — hold secret room (Dalmatians 85–87 etc.)"
+      }
+     ]
+    },
+    {
+     "id": "tri-white",
+     "title": "White Trinity (10)",
+     "loc": "",
+     "do": "",
+     "items": [
+      {
+       "id": "tri-white-1",
+       "cat": "trinity",
+       "label": "White Trinity — Traverse — Secret Waterway (Orichalcum)"
+      },
+      {
+       "id": "tri-white-2",
+       "cat": "trinity",
+       "label": "White Trinity — Wonderland — Scrambled-2 secret garden (Lady Luck)"
+      },
+      {
+       "id": "tri-white-3",
+       "cat": "trinity",
+       "label": "White Trinity — Olympus — center of plaza (Violetta)"
+      },
+      {
+       "id": "tri-white-4",
+       "cat": "trinity",
+       "label": "White Trinity — Deep Jungle — Cavern of Hearts (Orichalcum)"
+      },
+      {
+       "id": "tri-white-5",
+       "cat": "trinity",
+       "label": "White Trinity — Agrabah — first Cave room (Ifrit Belt)"
+      },
+      {
+       "id": "tri-white-6",
+       "cat": "trinity",
+       "label": "White Trinity — Monstro — Chamber 6 (Dark Matter)"
+      },
+      {
+       "id": "tri-white-7",
+       "cat": "trinity",
+       "label": "White Trinity — Halloween — pumpkin graveyard (Dalmatians 67–69)"
+      },
+      {
+       "id": "tri-white-8",
+       "cat": "trinity",
+       "label": "White Trinity — Atlantica — Triton's Palace (Orichalcum)"
+      },
+      {
+       "id": "tri-white-9",
+       "cat": "trinity",
+       "label": "White Trinity — Neverland — ship deck (Dalmatians 43–45)"
+      },
+      {
+       "id": "tri-white-10",
+       "cat": "trinity",
+       "label": "White Trinity — Hollow Bastion — icy entrance (Thundaga-G)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ref-cups",
+   "title": "✓ Olympus Cups",
+   "era": "Checklist",
+   "blurb": "Each cup has Normal / Sora-Alone / Time-Trial challenges. The Hades Cup win is the Proud secret-ending requirement; Gold/Platinum matches are the Ice Titan/Sephiroth superbosses (tracked in Ch.16).",
+   "steps": [
+    {
+     "id": "cup-phil",
+     "title": "Phil Cup (after Deep Jungle)",
+     "loc": "",
+     "do": "",
+     "items": [
+      {
+       "id": "cup-phil-normal",
+       "cat": "cup",
+       "label": "Phil Cup — Normal"
+      },
+      {
+       "id": "cup-phil-solo",
+       "cat": "cup",
+       "label": "Phil Cup — Sora Alone"
+      },
+      {
+       "id": "cup-phil-time",
+       "cat": "cup",
+       "label": "Phil Cup — Time Trial"
+      }
+     ]
+    },
+    {
+     "id": "cup-pegasus",
+     "title": "Pegasus Cup (after Monstro)",
+     "loc": "",
+     "do": "",
+     "items": [
+      {
+       "id": "cup-pegasus-normal",
+       "cat": "cup",
+       "label": "Pegasus Cup — Normal"
+      },
+      {
+       "id": "cup-pegasus-solo",
+       "cat": "cup",
+       "label": "Pegasus Cup — Sora Alone"
+      },
+      {
+       "id": "cup-pegasus-time",
+       "cat": "cup",
+       "label": "Pegasus Cup — Time Trial"
+      }
+     ]
+    },
+    {
+     "id": "cup-hercules",
+     "title": "Hercules Cup (after Neverland)",
+     "loc": "",
+     "do": "",
+     "items": [
+      {
+       "id": "cup-hercules-normal",
+       "cat": "cup",
+       "label": "Hercules Cup — Normal"
+      },
+      {
+       "id": "cup-hercules-solo",
+       "cat": "cup",
+       "label": "Hercules Cup — Sora Alone"
+      },
+      {
+       "id": "cup-hercules-time",
+       "cat": "cup",
+       "label": "Hercules Cup — Time Trial"
+      }
+     ]
+    },
+    {
+     "id": "cup-hades",
+     "title": "Hades Cup (after Hollow Bastion Pt 2)",
+     "loc": "",
+     "do": "",
+     "items": [
+      {
+       "id": "cup-hades-normal",
+       "cat": "cup",
+       "label": "Hades Cup — Normal"
+      },
+      {
+       "id": "cup-hades-solo",
+       "cat": "cup",
+       "label": "Hades Cup — Sora Alone"
+      },
+      {
+       "id": "cup-hades-time",
+       "cat": "cup",
+       "label": "Hades Cup — Time Trial"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ref-pooh",
+   "title": "✓ 100 Acre Wood",
+   "era": "Checklist",
+   "blurb": "Restore 5 torn pages (found across worlds) and clear each minigame's score goal; finish for the EXP Ring and the final Cheer reward.",
+   "steps": [
+    {
+     "id": "pooh-pages",
+     "title": "5 Torn Pages restored",
+     "loc": "",
+     "do": "Pages: Agrabah, Monstro, Traverse (51 puppies), Atlantica, Halloween.",
+     "items": [
+      {
+       "id": "pooh-page-agrabah",
+       "cat": "pooh",
+       "label": "Page 1 — Agrabah (Dark Chamber)"
+      },
+      {
+       "id": "pooh-page-monstro",
+       "cat": "pooh",
+       "label": "Page 2 — Monstro (Chamber 6)"
+      },
+      {
+       "id": "pooh-page-traverse",
+       "cat": "pooh",
+       "label": "Page 3 — Traverse (51 Dalmatians)"
+      },
+      {
+       "id": "pooh-page-atlantica",
+       "cat": "pooh",
+       "label": "Page 4 — Atlantica (Ariel's room)"
+      },
+      {
+       "id": "pooh-page-halloween",
+       "cat": "pooh",
+       "label": "Page 5 — Halloween (Laboratory)"
+      }
+     ]
+    },
+    {
+     "id": "pooh-games",
+     "title": "Minigames cleared",
+     "loc": "",
+     "do": "Hit each score goal for the page reward.",
+     "items": [
+      {
+       "id": "pooh-mg-bees",
+       "cat": "pooh",
+       "label": "Bee-jump (Pooh) — 100+ pts"
+      },
+      {
+       "id": "pooh-mg-carrots",
+       "cat": "pooh",
+       "label": "Defend carrots (Tigger) — 150+ pts"
+      },
+      {
+       "id": "pooh-mg-swing",
+       "cat": "pooh",
+       "label": "Owl swing — 40+ m"
+      },
+      {
+       "id": "pooh-mg-baseball",
+       "cat": "pooh",
+       "label": "Roo baseball — 20 pts < 30s + all 5 Rare Nuts"
+      },
+      {
+       "id": "pooh-mg-hide",
+       "cat": "pooh",
+       "label": "Find-them-all (night) < 5 min"
+      },
+      {
+       "id": "pooh-final",
+       "cat": "pooh",
+       "label": "Firewood + all minigames → Cheer (Owl)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ref-mushroom",
+   "title": "✓ Mushrooms & rare Heartless",
+   "era": "Checklist",
+   "blurb": "Master each magic on a White Mushroom (→ Dream Shield), and the bounce/secret-Heartless extras the Journal tracks.",
+   "steps": [
+    {
+     "id": "mush-masters",
+     "title": "White Mushroom — 7 magic masters",
+     "loc": "",
+     "do": "Cast the matching spell 3× by location.",
+     "items": [
+      {
+       "id": "mush-fire",
+       "cat": "mushroom",
+       "label": "Master of Fire (Wonderland Lotus Forest)"
+      },
+      {
+       "id": "mush-blizzard",
+       "cat": "mushroom",
+       "label": "Master of Blizzard (Wonderland)"
+      },
+      {
+       "id": "mush-thunder",
+       "cat": "mushroom",
+       "label": "Master of Thunder (Wonderland)"
+      },
+      {
+       "id": "mush-cure",
+       "cat": "mushroom",
+       "label": "Master of Cure (Deep Jungle camp)"
+      },
+      {
+       "id": "mush-gravity",
+       "cat": "mushroom",
+       "label": "Master of Gravity (Agrabah Treasure Room)"
+      },
+      {
+       "id": "mush-stop",
+       "cat": "mushroom",
+       "label": "Master of Stop (Atlantica, inside the ship)"
+      },
+      {
+       "id": "mush-aero",
+       "cat": "mushroom",
+       "label": "Master of Aero (Halloween graveyard)"
+      }
+     ]
+    },
+    {
+     "id": "mush-extra",
+     "title": "Bounce & rare-Heartless extras",
+     "loc": "",
+     "do": "Optional Journal flavour + farm bosses.",
+     "items": [
+      {
+       "id": "mush-truffle-50",
+       "cat": "mushroom",
+       "label": "Rare Truffle — 50 bounces (Shiitake rank)"
+      },
+      {
+       "id": "mush-truffle-100",
+       "cat": "mushroom",
+       "label": "Rare Truffle — 100 bounces (Matsutake rank)"
+      },
+      {
+       "id": "mush-agaricus",
+       "cat": "mushroom",
+       "label": "Pink Agaricus farmed (Serenity Power)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ref-clock",
+   "title": "✓ Neverland Clock Tower (12)",
+   "era": "Checklist",
+   "blurb": "Open the door matching your in-game play-hour for a reward; one per hour 1–12. Locks while you're between Ch.11 and beating Phantom — keep coming back.",
+   "steps": [
+    {
+     "id": "clock-doors",
+     "title": "12 time-gated doors",
+     "loc": "Neverland — Clock Tower (Option 3)",
+     "do": "",
+     "items": [
+      {
+       "id": "clock-1",
+       "cat": "clock",
+       "label": "1:00 door — Orichalcum"
+      },
+      {
+       "id": "clock-2",
+       "cat": "clock",
+       "label": "2:00 door — Power Up"
+      },
+      {
+       "id": "clock-3",
+       "cat": "clock",
+       "label": "3:00 door — Mythril Shard"
+      },
+      {
+       "id": "clock-4",
+       "cat": "clock",
+       "label": "4:00 door — Power Up"
+      },
+      {
+       "id": "clock-5",
+       "cat": "clock",
+       "label": "5:00 door — AP Up"
+      },
+      {
+       "id": "clock-6",
+       "cat": "clock",
+       "label": "6:00 door — Mythril"
+      },
+      {
+       "id": "clock-7",
+       "cat": "clock",
+       "label": "7:00 door — AP Up"
+      },
+      {
+       "id": "clock-8",
+       "cat": "clock",
+       "label": "8:00 door — Defense Up"
+      },
+      {
+       "id": "clock-9",
+       "cat": "clock",
+       "label": "9:00 door — Orichalcum"
+      },
+      {
+       "id": "clock-10",
+       "cat": "clock",
+       "label": "10:00 door — Defense Up"
+      },
+      {
+       "id": "clock-11",
+       "cat": "clock",
+       "label": "11:00 door — Mythril Shard"
+      },
+      {
+       "id": "clock-12",
+       "cat": "clock",
+       "label": "12:00 door — Megalixir"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ref-gummi",
+   "title": "✓ Gummi Blueprints (Geppetto)",
+   "era": "Checklist",
+   "blurb": "Geppetto rewards blueprints by total Heartless defeated. Enter his house 30× then talk to Pinocchio for Chocobo.",
+   "steps": [
+    {
+     "id": "gummi-list",
+     "title": "8 ship blueprints",
+     "loc": "Traverse Town — Geppetto's house",
+     "do": "",
+     "items": [
+      {
+       "id": "gummi-geppetto",
+       "cat": "gummi",
+       "label": "Geppetto blueprint (1st visit)"
+      },
+      {
+       "id": "gummi-chocobo",
+       "cat": "gummi",
+       "label": "Chocobo blueprint (enter house 30×)"
+      },
+      {
+       "id": "gummi-cid",
+       "cat": "gummi",
+       "label": "Cid blueprint (500+ kills)"
+      },
+      {
+       "id": "gummi-cactuar",
+       "cat": "gummi",
+       "label": "Cactuar blueprint (1000+ kills)"
+      },
+      {
+       "id": "gummi-yuffie",
+       "cat": "gummi",
+       "label": "Yuffie blueprint (1500+ kills)"
+      },
+      {
+       "id": "gummi-aerith",
+       "cat": "gummi",
+       "label": "Aerith blueprint (3000+ kills)"
+      },
+      {
+       "id": "gummi-leon",
+       "cat": "gummi",
+       "label": "Leon blueprint (4000+ kills)"
+      },
+      {
+       "id": "gummi-hyperion",
+       "cat": "gummi",
+       "label": "Hyperion blueprint (5000+ kills)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ref-synth",
+   "title": "✓ Synthesis (Moguri)",
+   "era": "Checklist",
+   "blurb": "Craft each recipe once; tiers unlock in groups. 15 crafts → Encounter Plus, 30 → final tier, 33 → Ultima Weapon. (Items also itemized in Ch.11/16.)",
+   "steps": [
+    {
+     "id": "synth-milestones",
+     "title": "Crafting milestones",
+     "loc": "Traverse Town — Moguri shop",
+     "do": "",
+     "items": [
+      {
+       "id": "synth-open",
+       "cat": "synth",
+       "label": "Synthesis unlocked (Green Trinity)"
+      },
+      {
+       "id": "synth-15",
+       "cat": "synth",
+       "label": "15 recipes crafted → Encounter Plus"
+      },
+      {
+       "id": "synth-30",
+       "cat": "synth",
+       "label": "30 recipes crafted → final tier unlocks"
+      },
+      {
+       "id": "synth-33",
+       "cat": "synth",
+       "label": "33 recipes crafted → Ultima Weapon available"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
